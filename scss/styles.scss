@@ -1,7 +1,99 @@
+@import 'variables';
+@import 'mixins';
+@import 'custom-bootstrap';
+
 body {
-  color: red;
+  position: relative;
+  margin: auto;
+  font-size: 16px;
+  padding: 0;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: $light !important;
+  color: $dark;
 }
 
-h1 {
-  color: black;
+a {
+  @include smooth-transition();
 }
+
+div {
+  @include round-border();
+}
+
+footer {
+  margin: 5rem 0;
+  text-align: center;
+  color: $primary;
+  border-color: $success;
+}
+
+/* Mixin Classes */
+@include hover-shadow();
+
+// ID Styles
+
+#puzzle-description {
+  @include small-shadow();
+  z-index: 2;
+  background-color: $white;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#puzzle-image {
+  background: $main-gradient;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#puzzle-question {
+  background: $main-gradient;
+  h5 {
+    @extend .mb-0;
+  }
+}
+
+#puzzle-answer-options {
+  @extend .row, .mt-3;
+  div.answer-option {
+    @extend .col, .p-3, .pl-4;
+    @include smooth-transition();
+    cursor: pointer;
+    background-color: $white;
+    border: $primary solid 0.08rem;
+    padding-left: 2rem !important;
+
+    &:hover {
+      background: $main-gradient;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #puzzle-description {
+    @include round-border();
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  #puzzle-image {
+    @include round-border();
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  #puzzle-answer-options {
+    flex-direction: column !important;
+    div.answer-option {
+      margin-left: 0 !important;
+      margin-top: 1rem;
+    }
+  }
+  #puzzle-display {
+    flex-direction: column !important;
+    #puzzle-description, #puzzle-image {
+      max-width: 100%;
+    }
+  }
+}
+
+
+

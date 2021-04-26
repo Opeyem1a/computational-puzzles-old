@@ -1,0 +1,41 @@
+
+@mixin transition($property) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+@mixin shadow($x, $y) {
+  box-shadow: 0 $x $y rgba(0, 0, 0, 0.08);
+}
+
+@mixin smooth-transition() {
+  @include transition(all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95));
+}
+
+@mixin soft-shadow() {
+  @include shadow(0.65rem, 0.65rem);
+}
+
+@mixin small-shadow() {
+  @include shadow(0.2rem, 0.4rem);
+}
+
+@mixin hover-shadow() {
+  .hover-shadow {
+    @include smooth-transition();
+
+    &:hover {
+      @include soft-shadow();
+    }
+  }
+}
+
+@mixin main-shadow() {
+  box-shadow: 0.05rem 0.1rem 0.5rem $shadow-color;
+}
+
+@mixin round-border() {
+  border-radius: 0.25rem;
+}
