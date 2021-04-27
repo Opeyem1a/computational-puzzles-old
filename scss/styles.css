@@ -7371,7 +7371,7 @@ button.bg-dark:focus {
   width: 75% !important;
 }
 
-.w-100, #puzzle-question-container {
+.w-100 {
   width: 100% !important;
 }
 
@@ -7434,7 +7434,9 @@ button.bg-dark:focus {
 }
 
 .mr-0,
-.mx-0 {
+.mx-0,
+div .row,
+div #puzzle-answer-options {
   margin-right: 0 !important;
 }
 
@@ -7445,7 +7447,9 @@ button.bg-dark:focus {
 }
 
 .ml-0,
-.mx-0 {
+.mx-0,
+div .row,
+div #puzzle-answer-options {
   margin-left: 0 !important;
 }
 
@@ -7501,7 +7505,7 @@ button.bg-dark:focus {
   margin: 1rem !important;
 }
 
-.mt-3, #puzzle-answer-options, #puzzle-question-container,
+.mt-3, #puzzle-answer-options, #puzzle-question-container button[type=submit], #puzzle-question-container,
 .my-3 {
   margin-top: 1rem !important;
 }
@@ -9954,7 +9958,6 @@ a {
 div {
   border-radius: 0.2rem;
 }
-
 footer {
   margin: 5rem 0;
   text-align: center;
@@ -10051,6 +10054,10 @@ footer {
     border-radius: 0.2rem;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+  }
+
+  #puzzle-question-container {
+    text-align: center;
   }
 
   #puzzle-answer-options {

@@ -18,6 +18,10 @@ a {
 
 div {
   @include round-border();
+
+  .row {
+    @extend .mx-0;
+  }
 }
 
 footer {
@@ -69,7 +73,11 @@ footer {
 }
 
 #puzzle-question-container {
-  @extend .mt-3, .w-100;
+  @extend .mt-3;
+
+  button[type=submit] {
+    @extend .mt-3;
+  }
 }
 
 #puzzle-question {
@@ -111,6 +119,9 @@ footer {
     @include round-border();
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+  }
+  #puzzle-question-container {
+    text-align: center;
   }
   #puzzle-answer-options {
     flex-direction: column !important;
