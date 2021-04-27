@@ -28,15 +28,13 @@ const setupEventListeners = () => {
     // divs for options are recoloured when a different option is selected
     $('#puzzle-answer-options').find('input').each((i, el) => {
         $(el).on('change', () => {
-            console.log('triggered');
             restyleOptions();
         })
     });
     // clicking the bounding div will select the input box within it
     $('div.answer-option').each((i, el) => {
         $(el).on('click', () => {
-            const innerInputEl = $(el).find('input');
-            innerInputEl.prop('checked', !innerInputEl.is(':checked'));
+            $(el).find('input').prop('checked', true);
             restyleOptions();
         })
     });
@@ -101,13 +99,9 @@ const loadAnswerKey = () => {
 };
 
 const enableQuiz = async () => {
-    // return so the promise can be chained
     // TODO: scramble answers
-    // TODO: attach answer event listener
-    console.log('enable quiz');
     $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
         const feedbackCode = checkAnswer();
-        console.log(feedbackCode);
         // TODO: add feedback gifs
         // addFeedbackGifs();
     })
