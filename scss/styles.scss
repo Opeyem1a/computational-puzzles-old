@@ -57,12 +57,13 @@ footer {
 
 #puzzle-image {
   @extend .px-0;
-  background: $main-gradient;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  background: $transparent;
 
   img {
     @extend .my-0, .h-auto, .w-auto;
+    @include round-border();
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 }
 
@@ -125,9 +126,11 @@ footer {
     border-bottom-left-radius: 0;
   }
   #puzzle-image {
-    @include round-border();
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    img {
+      @include round-border();
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
   }
   #puzzle-question-container {
     text-align: center;

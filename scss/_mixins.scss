@@ -33,6 +33,6 @@
   box-shadow: 0.05rem 0.1rem 0.5rem $shadow-color;
 }
 
-@mixin round-border() {
-  border-radius: 0.2rem;
+@mixin round-border($radius: 0.4rem) {
+  border-radius: $radius;
 }
