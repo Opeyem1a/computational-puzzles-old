@@ -1,8 +1,24 @@
+const PAGE_PATH = window.location.pathname;
+const FEEDBACK = {
+    CORRECT: 'ans',
+    ALMOST: 'alm',
+    INCORRECT: 'd',
+    NONE: 'none'
+}
+
+let answerKey = {};
 let feedbackGifs = {};
+let puzzleNum = 0;
 
 $(function () {
+    // retrieve the numeric index for this puzzle from the path name
+    puzzleNum = PAGE_PATH.split('/').pop().split('.')[0].slice(6);
+    loadAnswerKey();
     loadFeedbackGifs();
     setupEventListeners();
+    enableQuiz().then(() => {
+        //TODO: page shows up
+    });
     restyleOptions();
 });
 
@@ -56,7 +72,7 @@ const addFeedbackGifs = () => {
 const attachOrEditGif = (jqElement, gifType, offset) => {
     const gifClass = jqElement.attr("id");
     const newEmbedGif = `<img id="giphy-embed-${gifClass}" class="giphy-embed giphy-embed-${gifType}"
-                        src="../assets/feedbackGifs/${gifType}/${offset}.gif" alt="${gifType} Gif"/>`;
+                        src="../assets/feedback-gifs/${gifType}/${offset}.gif" alt="${gifType} Gif"/>`;
     const oldEmbedGif = $(`#giphy-embed-${gifClass}`);
 
     if (oldEmbedGif.length === 0) {
@@ -73,19 +89,35 @@ const attachOrEditGif = (jqElement, gifType, offset) => {
 const loadFeedbackGifs = () => {
     fetch(`../assets/feedback-gifs/feedback-gifs.json`)
         .then((response) => response.json())
-        .then((json) => {
-            feedbackGifs = json;
-        });
+        .then((json) => feedbackGifs = json)
+        .catch(e => console.error(e));
+};
+
+const loadAnswerKey = () => {
+    fetch(`../assets/answer-key.json`)
+        .then((response) => response.json())
+        .then((json) => answerKey = json)
+        .catch(e => console.error(e));
 };
 
 const enableQuiz = async () => {
     // return so the promise can be chained
     // TODO: scramble answers
-    // TODO: attach all event listeners
+    // TODO: attach answer event listener
+    console.log('enable quiz');
+    $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
+        const feedbackCode = checkAnswer();
+        console.log(feedbackCode);
+        // TODO: add feedback gifs
+        // addFeedbackGifs();
+    })
 };
 
-const displayGrade = (grade) => {
-    // TODO: check if selected is correct
+const checkAnswer = () => {
+    const selectedVal = $('#puzzle-answer-options').find('input:checked').val();
+    if (!selectedVal)
+        return FEEDBACK.NONE;
+    return selectedVal === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
 };
 
 // Helper Functions
