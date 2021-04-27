@@ -1,4 +1,3 @@
-
 @mixin transition($property) {
   -webkit-transition: $property;
   -moz-transition: $property;
@@ -7,7 +6,7 @@
 }
 
 @mixin shadow($x, $y) {
-  box-shadow: 0 $x $y rgba(0, 0, 0, 0.08);
+  box-shadow: 0.05rem $x $y $shadow-color;
 }
 
 @mixin smooth-transition() {
@@ -15,20 +14,18 @@
 }
 
 @mixin soft-shadow() {
-  @include shadow(0.65rem, 0.65rem);
+  @include shadow(0.45rem, 0.45rem);
 }
 
 @mixin small-shadow() {
-  @include shadow(0.2rem, 0.4rem);
+  @include shadow(0.15rem, 0.25rem);
 }
 
 @mixin hover-shadow() {
-  .hover-shadow {
-    @include smooth-transition();
+  @include smooth-transition();
 
-    &:hover {
-      @include soft-shadow();
-    }
+  &:hover {
+    @include soft-shadow();
   }
 }
 
@@ -37,5 +34,5 @@
 }
 
 @mixin round-border() {
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }

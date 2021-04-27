@@ -7371,11 +7371,11 @@ button.bg-dark:focus {
   width: 75% !important;
 }
 
-.w-100 {
+.w-100, #puzzle-question-container {
   width: 100% !important;
 }
 
-.w-auto {
+.w-auto, #puzzle-image img {
   width: auto !important;
 }
 
@@ -7395,7 +7395,7 @@ button.bg-dark:focus {
   height: 100% !important;
 }
 
-.h-auto {
+.h-auto, #puzzle-image img {
   height: auto !important;
 }
 
@@ -7428,7 +7428,8 @@ button.bg-dark:focus {
 }
 
 .mt-0,
-.my-0 {
+.my-0,
+#puzzle-image img {
   margin-top: 0 !important;
 }
 
@@ -7438,7 +7439,8 @@ button.bg-dark:focus {
 }
 
 .mb-0, #puzzle-question h5,
-.my-0 {
+.my-0,
+#puzzle-image img {
   margin-bottom: 0 !important;
 }
 
@@ -7499,7 +7501,7 @@ button.bg-dark:focus {
   margin: 1rem !important;
 }
 
-.mt-3, #puzzle-answer-options,
+.mt-3, #puzzle-answer-options, #puzzle-question-container,
 .my-3 {
   margin-top: 1rem !important;
 }
@@ -7577,7 +7579,8 @@ button.bg-dark:focus {
 }
 
 .pr-0,
-.px-0 {
+.px-0,
+#puzzle-image {
   padding-right: 0 !important;
 }
 
@@ -7587,7 +7590,8 @@ button.bg-dark:focus {
 }
 
 .pl-0,
-.px-0 {
+.px-0,
+#puzzle-image {
   padding-left: 0 !important;
 }
 
@@ -7629,17 +7633,17 @@ button.bg-dark:focus {
   padding-right: 0.5rem !important;
 }
 
-.pb-2,
+.pb-2, #puzzle-description,
 .py-2 {
   padding-bottom: 0.5rem !important;
 }
 
-.pl-2,
+.pl-2, #puzzle-question h5,
 .px-2 {
   padding-left: 0.5rem !important;
 }
 
-.p-3, #puzzle-answer-options div.answer-option {
+.p-3, #puzzle-answer-options div.answer-option, #puzzle-question h5 {
   padding: 1rem !important;
 }
 
@@ -7667,7 +7671,7 @@ button.bg-dark:focus {
   padding: 1.5rem !important;
 }
 
-.pt-4,
+.pt-4, #puzzle-description,
 .py-4 {
   padding-top: 1.5rem !important;
 }
@@ -7682,7 +7686,7 @@ button.bg-dark:focus {
   padding-bottom: 1.5rem !important;
 }
 
-.pl-4, #puzzle-answer-options div.answer-option,
+.pl-4, #puzzle-description,
 .px-4 {
   padding-left: 1.5rem !important;
 }
@@ -9629,7 +9633,7 @@ button.bg-dark:focus {
   text-align: right !important;
 }
 
-.text-center {
+.text-center, #puzzle-question h5 {
   text-align: center !important;
 }
 
@@ -9948,7 +9952,7 @@ a {
 }
 
 div {
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 footer {
@@ -9959,41 +9963,70 @@ footer {
 }
 
 /* Mixin Classes */
-.hover-shadow {
+/* ID Styles */
+#puzzle-display {
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 @media (prefers-reduced-motion: reduce) {
-  .hover-shadow {
+  #puzzle-display {
     transition: none;
   }
 }
-.hover-shadow:hover {
-  box-shadow: 0 0.65rem 0.65rem rgba(0, 0, 0, 0.08);
+@media (prefers-reduced-motion: reduce) {
+  #puzzle-display {
+    transition: none;
+  }
+}
+#puzzle-display:hover {
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(225, 190, 228, 0.35);
 }
 
 #puzzle-description {
-  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
+  box-shadow: 0.05rem 0.15rem 0.25rem rgba(225, 190, 228, 0.35);
   z-index: 2;
   background-color: #fff;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
+#puzzle-description h5 {
+  font-weight: 500;
+}
+#puzzle-description p {
+  font-weight: 300;
+}
 
 #puzzle-image {
-  background: linear-gradient(96.88deg, #FFA8BD 0%, #DFBEE5 100%);
+  background: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-
 #puzzle-question {
-  background: linear-gradient(96.88deg, #FFA8BD 0%, #DFBEE5 100%);
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  background: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  #puzzle-question {
+    transition: none;
+  }
+}
+#puzzle-question:hover {
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(225, 190, 228, 0.35);
 }
 #puzzle-answer-options div.answer-option {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   cursor: pointer;
-  background-color: #fff;
-  border: #007bff solid 0.08rem;
-  padding-left: 2rem !important;
+  border: double 0.08rem transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  padding-left: 2.5rem !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  #puzzle-answer-options div.answer-option {
+    transition: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-answer-options div.answer-option {
@@ -10001,18 +10034,21 @@ footer {
   }
 }
 #puzzle-answer-options div.answer-option:hover {
-  background: linear-gradient(96.88deg, #FFA8BD 0%, #DFBEE5 100%);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(225, 190, 228, 0.35);
+}
+#puzzle-answer-options div.answer-option:hover {
+  background-image: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 @media (max-width: 991.98px) {
   #puzzle-description {
-    border-radius: 0.25rem;
+    border-radius: 0.2rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   #puzzle-image {
-    border-radius: 0.25rem;
+    border-radius: 0.2rem;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
