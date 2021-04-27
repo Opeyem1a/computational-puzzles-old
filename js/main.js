@@ -1,14 +1,20 @@
 const PAGE_PATH = window.location.pathname;
 const FEEDBACK = {
-    CORRECT: 'ans',
-    ALMOST: 'alm',
-    INCORRECT: 'd',
+    CORRECT: 'correct',
+    ALMOST: 'almost',
+    INCORRECT: 'incorrect',
     NONE: 'none'
 }
+const GIF_DIR = `../assets/feedback-gifs`;
 
 let answerKey = {};
 let feedbackGifs = {};
 let puzzleNum = 0;
+
+// initial app state before quiz is loaded up
+$('#puzzle-display').hide();
+$('#puzzle-question-container').hide();
+$('#loading-screen').show();
 
 $(function () {
     // retrieve the numeric index for this puzzle from the path name
@@ -17,7 +23,9 @@ $(function () {
     loadFeedbackGifs();
     setupEventListeners();
     enableQuiz().then(() => {
-        //TODO: page shows up
+        $('#puzzle-display').show();
+        $('#puzzle-question-container').show();
+        $('#loading-screen').hide();
     });
     restyleOptions();
 });
@@ -53,39 +61,36 @@ const restyleOptions = () => {
     });
 };
 
-const addFeedbackGifs = () => {
-    $("input:checked").each(function () {
-        const gifType = $(this).attr("id").startsWith("ans")
-            ? "correct"
-            : $(this).attr("id").startsWith("alm")
-                ? "almost"
-                : "wrong";
+const addAlert = (type, message) => {
+    const alertElement =
+        `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+          <strong>Hold it!</strong> ${message}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>`;
 
-        const offset = Math.floor(Math.random() * feedbackGifs[gifType]);
-        // attach gif after the question-wrapper div element
-        attachOrEditGif($(this).parent().parent(), gifType, offset);
-    });
-};
+    $('#puzzle-feedback').append(alertElement);
+}
 
-const attachOrEditGif = (jqElement, gifType, offset) => {
-    const gifClass = jqElement.attr("id");
-    const newEmbedGif = `<img id="giphy-embed-${gifClass}" class="giphy-embed giphy-embed-${gifType}"
-                        src="../assets/feedback-gifs/${gifType}/${offset}.gif" alt="${gifType} Gif"/>`;
-    const oldEmbedGif = $(`#giphy-embed-${gifClass}`);
-
-    if (oldEmbedGif.length === 0) {
-        jqElement.after(newEmbedGif);
+const addFeedbackGif = (gifType) => {
+    const offset = Math.floor(Math.random() * feedbackGifs[gifType]);
+    if (gifType === FEEDBACK.NONE) {
+        addAlert('warning', 'You haven\'t selected an answer yet!');
         return;
     }
 
-    oldEmbedGif.attr({
-        src: `../assets/feedbackGifs/${gifType}/${offset}.gif`,
-        class: `giphy-embed giphy-embed-${gifType}`
-    });
+    const feedbackContainer = $('#puzzle-feedback');
+    const newEmbedGif = `<img id="feedback-gif" class="gif-embed gif-embed-${gifType} my-2"
+                        src="${GIF_DIR}/${gifType}/${offset}.gif" alt="${gifType} - Gif"
+                        aria-label="You have ${gifType}ly answered this puzzle"/>`;
+
+    feedbackContainer.empty();
+    feedbackContainer.append(newEmbedGif);
 };
 
 const loadFeedbackGifs = () => {
-    fetch(`../assets/feedback-gifs/feedback-gifs.json`)
+    fetch(`${GIF_DIR}/feedback-gifs.json`)
         .then((response) => response.json())
         .then((json) => feedbackGifs = json)
         .catch(e => console.error(e));
@@ -99,29 +104,18 @@ const loadAnswerKey = () => {
 };
 
 const enableQuiz = async () => {
-    // TODO: scramble answers
+    // TODO: scramble answers if needed?
     $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
         const feedbackCode = checkAnswer();
-        // TODO: add feedback gifs
-        // addFeedbackGifs();
+        addFeedbackGif(feedbackCode);
     })
 };
 
 const checkAnswer = () => {
+    // TODO: account for text field answers too
     const selectedVal = $('#puzzle-answer-options').find('input:checked').val();
     if (!selectedVal)
         return FEEDBACK.NONE;
     return selectedVal === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
 };
 
-// Helper Functions
-
-const getOptionType = (option) => {
-    let key = Object.keys(option)[0];
-    if (key === 'answer') return 'ans';
-    else return option[key].slice(0, 1) === '~' ? 'alm' : 'd';
-};
-
-const trimIfDefined = (target) => {
-    return target ? target.trim() : target;
-};

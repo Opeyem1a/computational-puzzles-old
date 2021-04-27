@@ -5,8 +5,8 @@
   transition: $property;
 }
 
-@mixin shadow($x, $y) {
-  box-shadow: 0.05rem $x $y $shadow-color;
+@mixin shadow($x, $y, $color: $shadow-color) {
+  box-shadow: 0.05rem $x $y $color;
 }
 
 @mixin smooth-transition() {
@@ -23,6 +23,7 @@
 
 @mixin hover-shadow() {
   @include smooth-transition();
+  @include small-shadow();
 
   &:hover {
     @include soft-shadow();

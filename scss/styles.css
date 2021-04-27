@@ -351,13 +351,14 @@ template {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1,
+.headline-text, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
-h1, .h1 {
+h1, .h1, .headline-text {
   font-size: 2.5rem;
 }
 
@@ -7371,7 +7372,7 @@ button.bg-dark:focus {
   width: 75% !important;
 }
 
-.w-100 {
+.w-100, .headline-text {
   width: 100% !important;
 }
 
@@ -7419,7 +7420,7 @@ button.bg-dark:focus {
   width: 100vw !important;
 }
 
-.vh-100 {
+.vh-100, .headline-text {
   height: 100vh !important;
 }
 
@@ -9639,7 +9640,7 @@ div #puzzle-answer-options {
   text-align: right !important;
 }
 
-.text-center, #puzzle-question {
+.text-center, .headline-text, #puzzle-question, #puzzle-feedback {
   text-align: center !important;
 }
 
@@ -9970,6 +9971,7 @@ footer {
 #puzzle-display {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: 0.05rem 0.15rem 0.25rem rgba(225, 190, 228, 0.35);
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-display {
@@ -10008,8 +10010,25 @@ footer {
   border-top-left-radius: 0;
 }
 
+#puzzle-feedback .gif-embed {
+  border-left: 0.6rem solid;
+  border-right: 0.6rem solid;
+  border-radius: 0.2rem;
+  height: 15rem;
+}
+#puzzle-feedback .gif-embed-correct {
+  border-color: #7aebb6;
+}
+#puzzle-feedback .gif-embed-almost {
+  border-color: #fd7e14;
+}
+#puzzle-feedback .gif-embed-incorrect {
+  border-color: #dc3545;
+}
+
 #puzzle-question {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: 0.05rem 0.15rem 0.25rem rgba(225, 190, 228, 0.35);
   background: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10023,6 +10042,7 @@ footer {
 #puzzle-answer-options div.answer-option {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: 0.05rem 0.15rem 0.25rem rgba(225, 190, 228, 0.35);
   cursor: pointer;
   border: double 0.08rem transparent;
   background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
@@ -10071,6 +10091,11 @@ footer {
     text-align: center;
   }
 
+  #puzzle-feedback img.gif-embed {
+    width: 65%;
+    height: auto;
+  }
+
   #puzzle-answer-options {
     flex-direction: column !important;
   }
@@ -10085,6 +10110,10 @@ footer {
   #puzzle-display #puzzle-description, #puzzle-display #puzzle-image {
     max-width: 100%;
   }
+}
+/* Class Styles */
+.headline-text {
+  color: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -75,6 +75,30 @@ footer {
   }
 }
 
+#puzzle-feedback {
+  @extend .text-center;
+
+  .gif-embed {
+    border-left: 0.6rem solid;
+    border-right: 0.6rem solid;
+    border-radius: 0.2rem;
+    height: 15rem;
+  }
+
+  .gif-embed-correct {
+    border-color: $success;
+  }
+
+  .gif-embed-almost {
+    border-color: $orange;
+  }
+
+  .gif-embed-incorrect {
+    border-color: $red;
+  }
+
+}
+
 #puzzle-question {
   @extend .text-center;
   @include hover-shadow();
@@ -135,6 +159,14 @@ footer {
   #puzzle-question-container {
     text-align: center;
   }
+
+  #puzzle-feedback {
+    img.gif-embed {
+      width: 65%;
+      height: auto;
+    }
+  }
+
   #puzzle-answer-options {
     flex-direction: column !important;
 
@@ -150,6 +182,13 @@ footer {
       max-width: 100%;
     }
   }
+}
+
+
+/* Class Styles */
+.headline-text {
+  @extend .h1, .text-center, .vh-100, .w-100;
+  color: $main-gradient;
 }
 
 
