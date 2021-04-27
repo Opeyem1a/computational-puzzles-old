@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <!-- TODO: fill in puzzle name -->
-    <title>PUZZLE NAME</title>
+    <title>Puzzle 1: Pathfinder!</title>
     <link href="../scss/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TODO: fill this in (down) -->
@@ -43,18 +43,24 @@
     <!-- Puzzle Display + Info -->
     <div id="puzzle-display" class="row hover-shadow">
         <div id="puzzle-description" class="col-4">
-            <h5>Name of Puzzle</h5>
-            <p>Puzzle Description.</p>
+            <small class="text-muted">Puzzle 1</small>
+            <h5>Pathfinder!</h5>
+            <p>On the treasure map, you'll find many individual blocks. We can describe a path from any block to another
+                with a series of instructions.</p>
+            <p>For example: "↑→→↑" leads us from the start block to the triangle. Cool, right? Let's use
+                our pathfinding skills to locate the hidden treasure!</p>
         </div>
         <div id="puzzle-image" class="d-flex flex-column justify-content-center col-8">
-            <img src="../assets/img/test.jpg" alt="Puzzle Image" class="row mx-0"/>
+            <img src="../assets/img/Puzzle%201%20-%20Pathfinder.png" alt="Puzzle Image" class="row mx-0"/>
         </div>
     </div>
 
     <!-- Question + Answers Form -->
     <div id="puzzle-question-container">
-        <div id="puzzle-question" class="row h-auto">
-            <h5 class="mx-auto">Is this a default question? Is this a default question? Is this a default question?</h5>
+        <div id="puzzle-question" class="h-auto">
+            <h6 class="mx-auto">The path to the treasure is:</h6>
+            <p>→↑→↓←↑↑→→↑</p>
+            <h6>Where is the treasure located?</h6>
         </div>
         <!--        <hr class="mb-0">-->
         <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
@@ -78,7 +84,7 @@
                 <label class="form-check-label" for="answerOption3">
                     C
                 </label>
-            </div>s
+            </div>
             <div class="form-check answer-option ml-3">
                 <input class="form-check-input" type="radio" name="answerOptions" id="answerOption4"
                        value="D">
@@ -101,6 +107,7 @@
 </footer>
 
 <script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../js/main.js"></script>
 </body>
 

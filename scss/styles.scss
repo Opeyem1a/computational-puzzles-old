@@ -75,11 +75,16 @@ footer {
 }
 
 #puzzle-question {
+  @extend .text-center;
   @include hover-shadow();
   background: $main-gradient;
 
-  h5 {
-    @extend .mb-0, .p-3, .pl-2, .text-center;
+  h6 {
+    @extend .mb-0, .p-3, .pl-2;
+  }
+
+  p {
+    @extend .my-0, .p-0;
   }
 }
 
@@ -99,6 +104,11 @@ footer {
 
     &:hover {
       background-image: linear-gradient($secondary, $secondary), linear-gradient($transparent, $transparent);
+    }
+
+    // hovering over the label or checkbox itself shouldn't revert the cursor
+    input, label {
+      cursor: pointer;
     }
   }
 

@@ -7429,6 +7429,7 @@ button.bg-dark:focus {
 
 .mt-0,
 .my-0,
+#puzzle-question p,
 #puzzle-image img {
   margin-top: 0 !important;
 }
@@ -7440,8 +7441,9 @@ div #puzzle-answer-options {
   margin-right: 0 !important;
 }
 
-.mb-0, #puzzle-question h5,
+.mb-0, #puzzle-question h6,
 .my-0,
+#puzzle-question p,
 #puzzle-image img {
   margin-bottom: 0 !important;
 }
@@ -7573,7 +7575,7 @@ div #puzzle-answer-options {
   margin-left: 3rem !important;
 }
 
-.p-0 {
+.p-0, #puzzle-question p {
   padding: 0 !important;
 }
 
@@ -7642,12 +7644,12 @@ div #puzzle-answer-options {
   padding-bottom: 0.5rem !important;
 }
 
-.pl-2, #puzzle-question h5,
+.pl-2, #puzzle-question h6,
 .px-2 {
   padding-left: 0.5rem !important;
 }
 
-.p-3, #puzzle-answer-options div.answer-option, #puzzle-question h5 {
+.p-3, #puzzle-answer-options div.answer-option, #puzzle-question h6 {
   padding: 1rem !important;
 }
 
@@ -9637,7 +9639,7 @@ div #puzzle-answer-options {
   text-align: right !important;
 }
 
-.text-center, #puzzle-question h5 {
+.text-center, #puzzle-question {
   text-align: center !important;
 }
 
@@ -9998,13 +10000,13 @@ footer {
 }
 
 #puzzle-image {
-  background: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
+  background: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 #puzzle-question {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  background: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
+  background: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-question {
@@ -10019,7 +10021,7 @@ footer {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   cursor: pointer;
   border: double 0.08rem transparent;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   padding-left: 2.5rem !important;
@@ -10040,9 +10042,12 @@ footer {
 #puzzle-answer-options div.answer-option:hover {
   background-image: linear-gradient(#6c757d, #6c757d), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
+#puzzle-answer-options div.answer-option input, #puzzle-answer-options div.answer-option label {
+  cursor: pointer;
+}
 #puzzle-answer-options div.answer-option.selected {
   color: #fafafa;
-  background-image: linear-gradient(135deg, #5b5b5b 0%, #5b5b5b 100%), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 @media (max-width: 991.98px) {
