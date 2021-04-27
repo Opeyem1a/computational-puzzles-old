@@ -3,7 +3,7 @@ let feedbackGifs = {};
 $(function () {
     loadFeedbackGifs();
     setupEventListeners();
-    recolourOptions();
+    restyleOptions();
 });
 
 // Setup Functions
@@ -13,7 +13,7 @@ const setupEventListeners = () => {
     $('#puzzle-answer-options').find('input').each((i, el) => {
         $(el).on('change', () => {
             console.log('triggered');
-            recolourOptions();
+            restyleOptions();
         })
     });
     // clicking the bounding div will select the input box within it
@@ -21,14 +21,14 @@ const setupEventListeners = () => {
         $(el).on('click', () => {
             const innerInputEl = $(el).find('input');
             innerInputEl.prop('checked', !innerInputEl.is(':checked'));
-            recolourOptions();
+            restyleOptions();
         })
     });
 }
 
 // Logic Functions
 
-const recolourOptions = () => {
+const restyleOptions = () => {
     $('#puzzle-answer-options').find('input').each((i, el) => {
         const parentDiv = $(el).parent();
         if ($(el).is(':checked')) {
