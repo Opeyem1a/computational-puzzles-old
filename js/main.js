@@ -1,10 +1,43 @@
 let feedbackGifs = {};
 
-
 $(function () {
     loadFeedbackGifs();
+    setupEventListeners();
+    recolourOptions();
 });
 
+// Setup Functions
+
+const setupEventListeners = () => {
+    // divs for options are recoloured when a different option is selected
+    $('#puzzle-answer-options').find('input').each((i, el) => {
+        $(el).on('change', () => {
+            console.log('triggered');
+            recolourOptions();
+        })
+    });
+    // clicking the bounding div will select the input box within it
+    $('div.answer-option').each((i, el) => {
+        $(el).on('click', () => {
+            const innerInputEl = $(el).find('input');
+            innerInputEl.prop('checked', !innerInputEl.is(':checked'));
+            recolourOptions();
+        })
+    });
+}
+
+// Logic Functions
+
+const recolourOptions = () => {
+    $('#puzzle-answer-options').find('input').each((i, el) => {
+        const parentDiv = $(el).parent();
+        if ($(el).is(':checked')) {
+            parentDiv.addClass('selected');
+        } else {
+            parentDiv.removeClass('selected');
+        }
+    });
+};
 
 const addFeedbackGifs = () => {
     $("input:checked").each(function () {
@@ -52,24 +85,7 @@ const enableQuiz = async () => {
 };
 
 const displayGrade = (grade) => {
-    if ($("#form-grade").length == 0) {
-        $("#review-form")
-            .find("hr").eq(1)
-            .before(
-                $("<p></p>").attr({
-                    id: "form-grade",
-                    class: "",
-                })
-            );
-    }
-
-    if (grade[0] == grade[1]) {
-        $("#goto-next-section").show();
-    }
-
-    logTimingQuiz(grade);
-
-    $("#form-grade").text(`Score: ${grade[0]}/${grade[1]}`);
+    // TODO: check if selected is correct
 };
 
 // Helper Functions

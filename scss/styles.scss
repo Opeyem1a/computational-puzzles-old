@@ -28,13 +28,7 @@ footer {
   margin: 5rem 0;
   text-align: center;
   color: $primary;
-  border-color: $success;
 }
-
-
-/* Mixin Classes */
-
-//@include hover-shadow();
 
 
 /* ID Styles */
@@ -104,8 +98,13 @@ footer {
     padding-left: 2.5rem !important;
 
     &:hover {
-      background-image: $main-gradient, linear-gradient($transparent, $transparent);
+      background-image: linear-gradient($secondary, $secondary), linear-gradient($transparent, $transparent);
     }
+  }
+
+  div.answer-option.selected {
+    color: $light;
+    background-image: $main-gradient, linear-gradient($transparent, $transparent);
   }
 }
 
