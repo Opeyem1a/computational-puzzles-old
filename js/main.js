@@ -71,7 +71,7 @@ const addAlert = (type, message) => {
         </div>`;
 
     $('#puzzle-feedback').append(alertElement);
-}
+};
 
 const addFeedbackGif = (gifType) => {
     const offset = Math.floor(Math.random() * feedbackGifs[gifType]);
@@ -105,7 +105,6 @@ const loadAnswerKey = () => {
 };
 
 const enableQuiz = async () => {
-    // TODO: scramble answers if needed?
     $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
         const feedbackCode = checkAnswer();
         addFeedbackGif(feedbackCode);
@@ -113,19 +112,10 @@ const enableQuiz = async () => {
 };
 
 const checkAnswer = () => {
-    let textAnswer = false;
-    let answerElement = $('#puzzle-answer-options');
-    if (!answerElement.length) {
-        answerElement = $('#puzzle-answer-text');
-        textAnswer = true;
-    }
+    const userAnswer = $('#puzzle-answer-options')?.find('input:checked').val() || $('#puzzle-answer-text')?.val();
 
-    const selectedVal = textAnswer ?
-        answerElement.val() :
-        answerElement.find('input:checked').val();
-
-    if (!selectedVal.length)
+    if (!userAnswer)
         return FEEDBACK.NONE;
-    return selectedVal.toLowerCase() === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
+    return userAnswer.toLowerCase() === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
 };
 
