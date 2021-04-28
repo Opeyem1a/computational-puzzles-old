@@ -4,7 +4,7 @@ const FEEDBACK = {
     ALMOST: 'almost',
     INCORRECT: 'incorrect',
     NONE: 'none'
-}
+};
 const GIF_DIR = `../assets/feedback-gifs`;
 
 let answerKey = {};
@@ -75,17 +75,18 @@ const addAlert = (type, message) => {
 
 const addFeedbackGif = (gifType) => {
     const offset = Math.floor(Math.random() * feedbackGifs[gifType]);
+    const feedbackContainer = $('#puzzle-feedback');
+    feedbackContainer.empty();
+
     if (gifType === FEEDBACK.NONE) {
         addAlert('warning', 'You haven\'t selected an answer yet!');
         return;
     }
 
-    const feedbackContainer = $('#puzzle-feedback');
     const newEmbedGif = `<img id="feedback-gif" class="gif-embed gif-embed-${gifType} my-2"
                         src="${GIF_DIR}/${gifType}/${offset}.gif" alt="${gifType} - Gif"
                         aria-label="You have ${gifType}ly answered this puzzle"/>`;
 
-    feedbackContainer.empty();
     feedbackContainer.append(newEmbedGif);
 };
 
@@ -112,10 +113,19 @@ const enableQuiz = async () => {
 };
 
 const checkAnswer = () => {
-    // TODO: account for text field answers too
-    const selectedVal = $('#puzzle-answer-options').find('input:checked').val();
-    if (!selectedVal)
+    let textAnswer = false;
+    let answerElement = $('#puzzle-answer-options');
+    if (!answerElement.length) {
+        answerElement = $('#puzzle-answer-text');
+        textAnswer = true;
+    }
+
+    const selectedVal = textAnswer ?
+        answerElement.val() :
+        answerElement.find('input:checked').val();
+
+    if (!selectedVal.length)
         return FEEDBACK.NONE;
-    return selectedVal === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
+    return selectedVal.toLowerCase() === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
 };
 
