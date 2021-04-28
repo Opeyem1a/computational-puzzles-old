@@ -48,13 +48,21 @@
         <div id="puzzle-description" class="col-5">
             <small class="text-muted">Puzzle 1</small>
             <h5>Pathfinder!</h5>
-            <p>On the treasure map, you'll find many individual blocks. We can describe a path from any block to another
+            <p>On this map, you'll find many individual blocks. We can describe a path from any block to another
                 with a series of instructions.</p>
-            <p>For example: "↑→→↑" leads us from the start block to the triangle. Cool, right? Let's use
-                our pathfinding skills to locate the hidden treasure!</p>
+            <p class="font-underline">Legend:</p>
+            <p><span class="font-weight-bold">👣</span> - Move forward by 1 block</p>
+            <p><span class="font-weight-bold">↶</span> - Turn left by 90⁰</p>
+            <p><span class="font-weight-bold">↷</span> - Turn right by 90⁰</p>
+            <hr>
+            <p>For example:</p>
+            <p class="font-weight-bold">👣↷👣↶👣↷👣👣↷👣</p>
+            <p>This path leads us to block "D" as shown in the example. Cool, right? Now, let's use our pathfinding
+                skills to find the hidden treasure!</p>
         </div>
         <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
-            <img src="../assets/img/Puzzle%201%20-%20Pathfinder.png" alt="Puzzle Image" class="row mx-0"/>
+            <!--            <img src="../assets/img/Puzzle%201%20-%20Pathfinder.png" alt="Puzzle Image" class="row mx-0"/>-->
+            <img src="../assets/img/Group%202.png" alt="Puzzle Image" class="row mx-0"/>
         </div>
     </div>
 
@@ -62,7 +70,7 @@
     <div id="puzzle-question-container">
         <div id="puzzle-question" class="h-auto">
             <h6 class="mx-auto">The path to the treasure is:</h6>
-            <p>→↑→↓←↑↑→→↑</p>
+            <p class="font-weight-bold">↷👣↶👣↷👣↶👣👣↶👣↶👣 </p>
             <h6>Where is the treasure located?</h6>
         </div>
         <hr class="mb-0">
