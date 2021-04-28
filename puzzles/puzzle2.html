@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Puzzle 2: Colouring!</title>
+    <link href="../scss/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO: fill this in (down) -->
+    <meta name="description" content="">
+</head>
+
+<body>
+<header>
+    <!-- Top Level Navigation Bar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <!-- TODO: fill in href -->
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <!-- TODO: fill in href -->
+                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- TODO: fill in href -->
+                    <a class="nav-link" href="#">Learn More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Page Content -->
+<div class="container d-flex flex-column mt-2 px-0">
+    <div id="loading-screen" class="headline-text">
+        Loading...
+    </div>
+
+    <!-- Puzzle Display + Info -->
+    <div id="puzzle-display" class="row hover-shadow">
+        <div id="puzzle-description" class="col-5">
+            <small class="text-muted">Puzzle 2</small>
+            <h5>Colourful!</h5>
+            <p>I'll let you in on a secret - There's a special way to colour images!</p>
+            <p>The rules are that you have to colour the image in a way so that no matter which line you pick, there are
+                different colours on either side of the line. Check out the example to see what we mean!</p>
+        </div>
+        <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
+            <img src="../assets/img/Puzzle%202%20-%20Colourful!.png" alt="Puzzle Image" class="row mx-0"/>
+        </div>
+    </div>
+
+    <!-- Question + Answers Form -->
+    <div id="puzzle-question-container">
+        <div id="puzzle-question" class="h-auto">
+            <h6 class="mx-auto">What is the fewest number of colours we can use to colour the "problem" image?</h6>
+        </div>
+        <hr class="mb-0">
+        <div id="puzzle-feedback"></div>
+        <form class="d-lg-flex justify-content-between h-auto">
+            <div class="form-group mx-auto">
+                <label for="puzzle-answer-text"></label>
+                <input type="text" id="puzzle-answer-text" class="form-control" placeholder="Your Answer..."/>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <a id="giphy-source" href="https://giphy.com/">Gifs via GIPHY</a>
+    <p>
+        <!-- TODO: fill in href -->
+        Made with ❤ by <a href="#">Us</a>.
+    </p>
+</footer>
+
+<script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>
