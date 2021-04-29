@@ -10,115 +10,59 @@
 </head>
 
 <body>
-<header>
-    <!-- Top Level Navigation Bar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <!-- TODO: fill in href -->
-        <a class="navbar-brand" href="#">LOGO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <!-- TODO: fill in href -->
-                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <!-- TODO: fill in href -->
-                    <a class="nav-link" href="#">Learn More</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 
 <!-- Main Page Content -->
 <div class="container d-flex flex-column mt-2 px-0">
-    <div id="loading-screen" class="headline-text">
-        Loading...
-    </div>
+    <h2 id="page-heading" class="mt-4">Home</h2>
 
     <!-- Puzzle Display + Info -->
-    <div id="puzzle-display" class="row hover-shadow">
-        <div id="puzzle-description" class="col-5">
-            <small class="text-muted">Puzzle 1</small>
-            <h5>Pathfinder!</h5>
-            <p>On this map, you'll find many individual blocks. We can describe a path from any block to another
-                with a series of instructions.</p>
-            <p class="font-underline">Legend:</p>
-            <p><span class="font-weight-bold">👣</span> - Move forward by 1 block</p>
-            <p><span class="font-weight-bold">↶</span> - Turn left by 90⁰</p>
-            <p><span class="font-weight-bold">↷</span> - Turn right by 90⁰</p>
-            <hr>
-            <p>For example:</p>
-            <p class="font-weight-bold">👣↷👣↶👣↷👣👣↷👣</p>
-            <p>This path leads us to block "D" as shown in the example. Cool, right? Now, let's use our pathfinding
-                skills to find the hidden treasure!</p>
+    <div id="puzzles-drawer">
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col-5">
+                <small class="text-muted">Puzzle 1</small>
+                <h5>Pathfinder!</h5>
+                <p>Navigate to the hidden treasure with your newfound path-finding skills!</p>
+            </div>
+            <div class="puzzle-image d-flex flex-column justify-content-center col-7">
+                <img src="./assets/img/Puzzle%201%20-%20Pathfinder.png" alt="Puzzle Image" class="row mx-0"/>
+            </div>
         </div>
-        <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
-            <!--            <img src="../assets/img/Puzzle%201%20-%20Pathfinder.png" alt="Puzzle Image" class="row mx-0"/>-->
-            <img src="../assets/img/Group%202.png" alt="Puzzle Image" class="row mx-0"/>
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col-5">
+                <small class="text-muted">Puzzle 2</small>
+                <h5>Colourful!</h5>
+                <p>Can you master the secret colouring technique?</p>
+            </div>
+            <div class="puzzle-image d-flex flex-column justify-content-center col-7">
+                <img src="./assets/img/Puzzle%202%20-%20Colourful.png" alt="Puzzle Image" class="row mx-0"/>
+            </div>
         </div>
-    </div>
-
-    <!-- Question + Answers Form -->
-    <div id="puzzle-question-container">
-        <div id="puzzle-question" class="h-auto">
-            <h6 class="mx-auto">The path to the treasure is:</h6>
-            <p class="font-weight-bold">↷👣↶👣↷👣↶👣👣↶👣↶👣 </p>
-            <h6>Where is the treasure located?</h6>
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col-5">
+                <small class="text-muted">Puzzle 3</small>
+                <h5>Routes!</h5>
+                <p>Save energy on your quest to deliver letters around your neighbourhood!</p>
+            </div>
+            <div class="puzzle-image d-flex flex-column justify-content-center col-7">
+                <img src="./assets/img/Puzzle%203%20-%20Routes.png" alt="Puzzle Image" class="row mx-0"/>
+            </div>
         </div>
-        <hr class="mb-0">
-        <div id="puzzle-feedback"></div>
-        <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
-            <div class="form-check answer-option">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption1"
-                       value="A">
-                <label class="form-check-label" for="answerOption1">
-                    A
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption2"
-                       value="B">
-                <label class="form-check-label" for="answerOption2">
-                    B
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption3"
-                       value="C">
-                <label class="form-check-label" for="answerOption3">
-                    C
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption4"
-                       value="D">
-                <label class="form-check-label" for="answerOption4">
-                    D
-                </label>
-            </div>
-        </form>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
 
 
 <footer class="footer">
-    <a id="giphy-source" href="https://giphy.com/">Gifs via GIPHY</a>
+    <p>Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a></p>
     <p>
         <!-- TODO: fill in href -->
-        Made with ❤ by <a href="#">Us</a>.
+        Made with ❤ by <a href="#">her</a> & <a href="#">I</a>.
     </p>
 </footer>
 
-<script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="../js/main.js"></script>
+<script src="./js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="./js/landing.js"></script>
 </body>
 
 </html>

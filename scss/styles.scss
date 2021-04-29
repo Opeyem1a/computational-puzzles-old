@@ -143,13 +143,33 @@ footer {
   }
 }
 
+#puzzles-drawer {
+  @extend .d-flex, .flex-column;
+  div.puzzle-display {
+    @extend .mb-3;
+
+    &:hover {
+      cursor: pointer;
+      border-width: 2rem;
+      border-color: #0c5460;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #page-heading {
+    margin: 1rem auto;
+    text-align: center;
+  }
+}
+
 @include media-breakpoint-down(md) {
-  #puzzle-description {
+  #puzzle-description, .puzzle-description {
     @include round-border();
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-  #puzzle-image {
+  #puzzle-image, .puzzle-image {
     img {
       @include round-border();
       border-top-right-radius: 0;
@@ -175,7 +195,7 @@ footer {
       margin-top: 1rem;
     }
   }
-  #puzzle-display {
+  #puzzle-display, .puzzle-display {
     flex-direction: column !important;
 
     #puzzle-description, #puzzle-image {
@@ -189,6 +209,17 @@ footer {
 .headline-text {
   @extend .h1, .text-center, .vh-100, .w-100;
   color: $main-gradient;
+}
+
+.puzzle-display {
+  @include smooth-transition();
+  @include hover-shadow();
+  .puzzle-description {
+    @extend #puzzle-description;
+  }
+  .puzzle-image {
+    @extend #puzzle-image;
+  }
 }
 
 
