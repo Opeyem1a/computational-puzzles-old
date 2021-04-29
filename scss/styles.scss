@@ -8,7 +8,7 @@ body {
   font-size: 16px;
   padding: 0;
   font-family: 'Inter', Helvetica, Arial, sans-serif;
-  background-color: $light !important;
+  background-color: $white !important;
   color: $dark;
 }
 
@@ -144,6 +144,7 @@ footer {
 
 #puzzles-drawer {
   @extend .d-flex, .flex-column;
+
   div.puzzle-display {
     @extend .mb-3;
 
@@ -213,11 +214,25 @@ footer {
 .puzzle-display {
   @include smooth-transition();
   @include hover-shadow();
+
   .puzzle-description {
     @extend #puzzle-description;
+    @include round-border();
   }
+
   .puzzle-image {
     @extend #puzzle-image;
+  }
+}
+
+.content-section {
+  @extend .my-4, .px-4;
+
+  h2, h3 {
+    text-decoration: underline;
+    text-decoration-color: $primary;
+    text-decoration-thickness: 0.2rem;
+    //text-decoration-style: thick;
   }
 }
 
