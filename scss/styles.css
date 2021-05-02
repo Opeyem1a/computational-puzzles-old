@@ -10045,7 +10045,7 @@ footer {
 #puzzle-question {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
-  background: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
+  background: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-question {
@@ -10061,7 +10061,7 @@ footer {
   box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
   cursor: pointer;
   border: double 0.08rem transparent;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   padding-left: 2.5rem !important;
@@ -10087,7 +10087,7 @@ footer {
 }
 #puzzle-answer-options div.answer-option.selected {
   color: #fafafa;
-  background-image: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 
 #puzzles-drawer div.puzzle-display:hover {
@@ -10139,7 +10139,7 @@ footer {
 }
 /* Class Styles */
 .headline-text {
-  color: linear-gradient(135deg, #FFB039 0%, #FF6B00 100%);
+  color: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
 }
 
 .puzzle-display {

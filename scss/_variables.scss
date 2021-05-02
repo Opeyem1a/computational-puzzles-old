@@ -10,4 +10,4 @@ $failure: #ff5252;
 
 
 $shadow-color: rgba($accent-color, 0.2);
-$main-gradient: linear-gradient(135deg, #FFB039  0%, #FF6B00 100%);
+$main-gradient: linear-gradient(135deg, $accent-color 0%, rgba($accent-color, 0.75) 100%);
