@@ -10163,11 +10163,13 @@ footer {
 }
 .puzzle-display .puzzle-description {
   border-radius: 0.4rem;
-  background-color: rgba(255, 255, 255, 0);
 }
 .puzzle-display.selected {
   background-color: #d67070;
   color: #fafafa !important;
+}
+.puzzle-display.selected .puzzle-description {
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .content-section h2, .content-section h3 {
@@ -10180,10 +10182,11 @@ footer {
 }
 
 div.pattern {
+  z-index: -1;
   position: fixed;
   top: 0;
-  opacity: 0.25;
-  background-image: radial-gradient(#6AB8FF 1px, transparent 1px), radial-gradient(#6AB8FF 1px, transparent 1px);
+  opacity: 0.1;
+  background-image: radial-gradient(#5b5b5b 1px, transparent 1px), radial-gradient(#343a40 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }

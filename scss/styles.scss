@@ -219,7 +219,6 @@ footer {
   .puzzle-description {
     @extend #puzzle-description;
     @include round-border();
-    background-color: $transparent;
   }
 
   .puzzle-image {
@@ -228,6 +227,9 @@ footer {
 }
 
 .puzzle-display.selected {
+  .puzzle-description {
+    background-color: $transparent;
+  }
   background-color: $accent-color;
   color: $light !important;
 }
@@ -247,10 +249,11 @@ footer {
 }
 
 div.pattern {
+  z-index: -1;
   position: fixed;
   top: 0;
-  opacity: 0.25;
-  background-image: radial-gradient($second-color 1px, transparent 1px), radial-gradient($second-color 1px, transparent 1px);
+  opacity: 0.1;
+  background-image: radial-gradient(#5b5b5b 1px, transparent 1px), radial-gradient($dark 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
