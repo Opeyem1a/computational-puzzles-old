@@ -1,14 +1,13 @@
 $light: #fafafa;
 $bg-color: $light;
-$transparent: rgba(0, 0, 0, 0);
+$transparent: rgba(#fff, 0);
 $accent-color: #d67070;
-$title-color: #1b1b1b;
-$text-color: #303030;
+$second-color: #6AB8FF;
 
 $success: #7aebb6;
 $almost: #ffa652;
 $failure: #ff5252;
 
 
-$shadow-color: rgba(225, 190, 228, 0.35);
+$shadow-color: rgba($accent-color, 0.2);
 $main-gradient: linear-gradient(135deg, #FFB039  0%, #FF6B00 100%);

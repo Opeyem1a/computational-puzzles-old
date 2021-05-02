@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Puzzles! - Landing</title>
+    <link href="./scss/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computational thinking puzzles for children">
+</head>
+
+<body>
+
+<div class="pattern vh-100 vw-100"></div>
+<!-- Main Page Content -->
+<div class="container d-flex flex-column mt-2 px-0">
+    <div class="content-section">
+        <h1 id="page-heading" class="mb-0">Hunt Outside</h1>
+    </div>
+
+    <div class="content-section">
+        <h3>Instructions</h3>
+        <p>By clicking on the puzzles below, you will be given a hint for the location of that puzzle! Using both the
+            map and the hint, find the puzzle and then complete it!</p>
+    </div>
+
+    <!-- Puzzle Display + Info -->
+    <div id="puzzles-drawer" class="px-4 mt-2">
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col">
+                <small class="text-muted">Puzzle 1</small>
+                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                <h5>Pathfinder!</h5>
+                <p class="d-none mb-2">Hint for puzzle 1.</p>
+            </div>
+        </div>
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col">
+                <small class="text-muted">Puzzle 2</small>
+                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                <h5>Colourful!</h5>
+                <p class="d-none mb-2">Hint for puzzle 2.</p>
+            </div>
+        </div>
+        <div class="puzzle-display row hover-shadow">
+            <div class="puzzle-description col">
+                <small class="text-muted">Puzzle 3</small>
+                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                <h5>Routes!</h5>
+                <p class="d-none mb-2">Hint for puzzle 3.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <p>Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a></p>
+    <p>
+        <!-- TODO: fill in href -->
+        Made with ❤ by <a href="#">me</a> with <a href="#">her</a> help.
+    </p>
+</footer>
+
+<script src="./js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="./js/landing.js"></script>
+</body>
+
+</html>

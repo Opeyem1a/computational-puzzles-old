@@ -31,7 +31,7 @@
 }
 
 @mixin main-shadow() {
-  box-shadow: 0.05rem 0.1rem 0.5rem $shadow-color;
+  @include shadow(0.1rem, 0.5rem);
 }
 
 @mixin round-border($radius: 0.4rem) {

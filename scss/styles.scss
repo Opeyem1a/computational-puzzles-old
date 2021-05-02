@@ -10,6 +10,7 @@ body {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   background-color: $white !important;
   color: $dark;
+  opacity: 100%;
 }
 
 a {
@@ -38,7 +39,7 @@ footer {
 }
 
 #puzzle-description {
-  @extend .pt-4, .pl-4, .pb-2;
+  @extend .py-3, .px-4;
   @include small-shadow();
   z-index: 2;
   background-color: $white;
@@ -150,8 +151,6 @@ footer {
 
     &:hover {
       cursor: pointer;
-      border-width: 2rem;
-      border-color: #0c5460;
     }
   }
 }
@@ -206,6 +205,7 @@ footer {
 
 
 /* Class Styles */
+
 .headline-text {
   @extend .h1, .text-center, .vh-100, .w-100;
   color: $main-gradient;
@@ -214,10 +214,12 @@ footer {
 .puzzle-display {
   @include smooth-transition();
   @include hover-shadow();
+  border: 0.1rem solid $accent-color;
 
   .puzzle-description {
     @extend #puzzle-description;
     @include round-border();
+    background-color: $transparent;
   }
 
   .puzzle-image {
@@ -225,16 +227,34 @@ footer {
   }
 }
 
+.puzzle-display.selected {
+  background-color: $accent-color;
+  color: $light !important;
+}
+
 .content-section {
   @extend .my-4, .px-4;
 
   h2, h3 {
     text-decoration: underline;
-    text-decoration-color: $primary;
+    text-decoration-color: $accent-color;
     text-decoration-thickness: 0.2rem;
-    //text-decoration-style: thick;
+  }
+
+  div > img {
+    width: 100%;
   }
 }
+
+div.pattern {
+  position: fixed;
+  top: 0;
+  opacity: 0.25;
+  background-image: radial-gradient($second-color 1px, transparent 1px), radial-gradient($second-color 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
 
 
 

@@ -1,8 +1,13 @@
 $theme-colors: (
-        //"primary": #6AB8FF,
+        "primary": $accent-color,
+        "success": #7aebb6,
         "danger": #FF5252,
         "warning": #FFBA35,
         "dark": #1b1b1b
 );
+
+//@import '../node_modules/bootstrap/scss/bootstrap-grid';
+//@import '../node_modules/bootstrap/scss/mixins';
+//@import '../node_modules/bootstrap/scss/buttons';
 
 @import '../node_modules/bootstrap/scss/bootstrap';
