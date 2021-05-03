@@ -6123,7 +6123,7 @@ button.bg-dark:focus {
   background-color: transparent !important;
 }
 
-.border {
+.border, #puzzle-answer-options div.answer-option {
   border: 1px solid #dee2e6 !important;
 }
 
@@ -10041,25 +10041,17 @@ footer {
 
 #puzzle-question {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
-  background: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-question {
     transition: none;
   }
 }
-#puzzle-question:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
-}
 #puzzle-answer-options div.answer-option {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
   cursor: pointer;
-  border: double 0.08rem transparent;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border-color: #5b5b5b !important;
   padding-left: 2.5rem !important;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10071,14 +10063,18 @@ footer {
   box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 #puzzle-answer-options div.answer-option:hover {
-  background-image: linear-gradient(135deg, #6AB8FF 0%, rgba(106, 184, 255, 0.75) 100%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  border-color: #d67070 !important;
 }
 #puzzle-answer-options div.answer-option input, #puzzle-answer-options div.answer-option label {
   cursor: pointer;
 }
 #puzzle-answer-options div.answer-option.selected {
   color: #fafafa;
+  border-color: #fafafa !important;
   background-image: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+#puzzle-answer-options div.answer-option.selected:hover {
+  border-color: #fafafa !important;
 }
 
 #puzzles-drawer div.puzzle-display:hover {
@@ -10133,7 +10129,7 @@ footer {
 }
 /* Class Styles */
 .headline-text {
-  color: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
+  color: #d67070;
 }
 
 .puzzle-display {

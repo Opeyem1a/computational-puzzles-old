@@ -103,8 +103,6 @@ footer {
 #puzzle-question {
   @extend .text-center;
   @include smooth-transition();
-  @include hover-shadow();
-  background: $main-gradient;
 
   h6 {
     @extend .mb-0, .p-3, .pl-2;
@@ -119,18 +117,15 @@ footer {
   @extend .row, .my-2;
 
   div.answer-option {
-    @extend .col, .p-3;
+    @extend .col, .p-3, .border;
     @include smooth-transition();
     @include hover-shadow();
     cursor: pointer;
-    border: double 0.08rem transparent;
-    background-image: linear-gradient($white, $white), $main-gradient;
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border-color: $p-grey !important;
     padding-left: 2.5rem !important;
 
     &:hover {
-      background-image: $second-gradient, linear-gradient($transparent, $transparent);
+      border-color: $accent-color !important;
     }
 
     // hovering over the label or checkbox itself shouldn't revert the cursor
@@ -141,7 +136,11 @@ footer {
 
   div.answer-option.selected {
     color: $light;
+    border-color: $light !important;
     background-image: $main-gradient, linear-gradient($transparent, $transparent);
+    &:hover {
+      border-color: $light !important;
+    }
   }
 }
 
@@ -217,7 +216,7 @@ footer {
 
 .headline-text {
   @extend .h1, .text-center, .vh-100, .w-100;
-  color: $main-gradient;
+  color: $accent-color;
 }
 
 .puzzle-display {
