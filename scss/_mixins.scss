@@ -13,19 +13,19 @@
   @include transition(all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95));
 }
 
-@mixin soft-shadow() {
-  @include shadow(0.45rem, 0.45rem);
+@mixin soft-shadow($color: $shadow-color) {
+  @include shadow(0.45rem, 0.45rem, $color);
 }
 
 @mixin small-shadow() {
   @include shadow(0.1rem, 0.2rem, rgba(#5b5b5b, 0.1));
 }
 
-@mixin hover-shadow() {
+@mixin hover-shadow($color: $shadow-color) {
   @include small-shadow();
 
   &:hover {
-    @include soft-shadow();
+    @include soft-shadow($color);
   }
 }
 
