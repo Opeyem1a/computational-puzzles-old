@@ -159,6 +159,13 @@ footer {
 
 /* Breakpoints */
 
+@include media-breakpoint-down(sm) {
+  .map-image {
+    height: auto !important;
+    width: 100%;
+  }
+}
+
 @include media-breakpoint-down(md) {
   .header-group {
     .header-content {
@@ -309,4 +316,11 @@ div.pattern {
 
 .border-accent {
   border-color: $accent-color !important;
+}
+
+.map-image {
+  @include smooth-transition();
+  @include hover-shadow(rgba($p-grey, 0.15));
+
+  height: 25rem;
 }

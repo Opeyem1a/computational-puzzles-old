@@ -10082,6 +10082,12 @@ footer {
 }
 
 /* Breakpoints */
+@media (max-width: 767.98px) {
+  .map-image {
+    height: auto !important;
+    width: 100%;
+  }
+}
 @media (max-width: 991.98px) {
   .header-group .header-content {
     display: block;
@@ -10210,6 +10216,20 @@ div.pattern {
 
 .border-accent {
   border-color: #d67070 !important;
+}
+
+.map-image {
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
+  height: 25rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-image {
+    transition: none;
+  }
+}
+.map-image:hover {
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(91, 91, 91, 0.15);
 }
 
 /*# sourceMappingURL=styles.css.map */
