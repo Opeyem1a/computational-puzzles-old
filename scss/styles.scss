@@ -27,8 +27,9 @@ div {
 }
 
 footer {
-  margin: 5rem 0;
+  @extend .mb-4;
   text-align: center;
+  margin-top: 8rem;
 }
 
 
@@ -269,8 +270,8 @@ div.pattern {
   z-index: -1;
   position: fixed;
   top: 0;
-  opacity: 0.1;
-  background-image: radial-gradient(#5b5b5b 1px, transparent 1px), radial-gradient($dark 1px, transparent 1px);
+  opacity: 0.15;
+  background-image: radial-gradient($p-grey 1px, transparent 1px), radial-gradient($dark 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
