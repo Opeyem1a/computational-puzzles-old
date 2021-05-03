@@ -10162,11 +10162,6 @@ footer {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.content-section h2, .content-section h3 {
-  text-decoration: underline;
-  text-decoration-color: #d67070;
-  text-decoration-thickness: 0.2rem;
-}
 .content-section div > img {
   width: 100%;
 }
@@ -10187,6 +10182,12 @@ div.pattern {
 }
 .header-group #header-bar div {
   border-radius: 0;
+}
+
+.thick-underline, .content-section h2, .content-section h3 {
+  text-decoration: underline;
+  text-decoration-color: #d67070;
+  text-decoration-thickness: 0.2rem;
 }
 
 .white-block {

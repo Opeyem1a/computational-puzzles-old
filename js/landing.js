@@ -2,7 +2,7 @@ const PUZZLES_DIR = `./puzzles`;
 
 $(function () {
     const isOnlineMode = determineIfOnline();
-    $('#puzzles-drawer').children().each((i, el) => {
+    $('#puzzles-drawer').find('.puzzle-display').each((i, el) => {
         $(el).on('click', () => {
             clickHandler(i, el, isOnlineMode);
         })

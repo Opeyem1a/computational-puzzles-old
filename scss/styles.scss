@@ -254,9 +254,7 @@ footer {
   @extend .my-4, .px-4;
 
   h2, h3 {
-    text-decoration: underline;
-    text-decoration-color: $accent-color;
-    text-decoration-thickness: 0.2rem;
+    @extend .thick-underline;
   }
 
   div > img {
@@ -284,6 +282,12 @@ div.pattern {
       border-radius: 0;
     }
   }
+}
+
+.thick-underline {
+  text-decoration: underline;
+  text-decoration-color: $accent-color;
+  text-decoration-thickness: 0.2rem;
 }
 
 .header-group.content-section {
