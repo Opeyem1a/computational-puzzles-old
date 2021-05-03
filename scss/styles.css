@@ -7443,7 +7443,7 @@ div #puzzle-answer-options {
   margin-right: 0 !important;
 }
 
-.mb-0, #puzzle-question h6,
+.mb-0, .header-group.content-section, #puzzle-question h6,
 .my-0,
 #puzzle-question p,
 #puzzle-image img,
@@ -9986,13 +9986,7 @@ footer {
 /* ID Styles */
 #puzzle-display {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
-}
-@media (prefers-reduced-motion: reduce) {
-  #puzzle-display {
-    transition: none;
-  }
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
 }
 @media (prefers-reduced-motion: reduce) {
   #puzzle-display {
@@ -10000,11 +9994,11 @@ footer {
   }
 }
 #puzzle-display:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 
 #puzzle-description, .puzzle-display .puzzle-description {
-  box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
   z-index: 2;
   background-color: #fff;
   border-bottom-right-radius: 0;
@@ -10044,7 +10038,7 @@ footer {
 
 #puzzle-question {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
   background: linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10053,12 +10047,11 @@ footer {
   }
 }
 #puzzle-question:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 #puzzle-answer-options div.answer-option {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
   cursor: pointer;
   border: double 0.08rem transparent;
   background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #d67070 0%, rgba(214, 112, 112, 0.75) 100%);
@@ -10071,13 +10064,8 @@ footer {
     transition: none;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  #puzzle-answer-options div.answer-option {
-    transition: none;
-  }
-}
 #puzzle-answer-options div.answer-option:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 #puzzle-answer-options div.answer-option:hover {
   background-image: linear-gradient(#6c757d, #6c757d), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
@@ -10094,13 +10082,16 @@ footer {
   cursor: pointer;
 }
 
-@media (max-width: 767.98px) {
-  #page-heading {
-    margin: 1rem auto;
-    text-align: center;
-  }
-}
+/* Breakpoints */
 @media (max-width: 991.98px) {
+  .header-group .header-content {
+    display: block;
+    text-align: center !important;
+  }
+  .header-group .header-content #page-heading {
+    margin-left: 0 !important;
+  }
+
   #puzzle-description, .puzzle-display .puzzle-description, .puzzle-description {
     border-radius: 0.4rem;
     border-bottom-right-radius: 0;
@@ -10144,8 +10135,7 @@ footer {
 
 .puzzle-display {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  box-shadow: 0.05rem 0.15rem 0.25rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
   border: 0.1rem solid #d67070;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10153,13 +10143,8 @@ footer {
     transition: none;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .puzzle-display {
-    transition: none;
-  }
-}
 .puzzle-display:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.2);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 .puzzle-display .puzzle-description {
   border-radius: 0.4rem;
@@ -10181,6 +10166,7 @@ footer {
   width: 100%;
 }
 
+/* Purely Style */
 div.pattern {
   z-index: -1;
   position: fixed;
@@ -10189,6 +10175,42 @@ div.pattern {
   background-image: radial-gradient(#5b5b5b 1px, transparent 1px), radial-gradient(#343a40 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
+}
+
+.header-group #header-bar {
+  height: 0.5rem;
+}
+.header-group #header-bar div {
+  border-radius: 0;
+}
+
+.white-block {
+  background-color: #fafafa;
+}
+
+.bg-block {
+  background-color: #fff;
+}
+
+.red-block {
+  background-color: #d67070;
+}
+
+.blue-block {
+  background-color: #6AB8FF;
+}
+
+.yellow-block {
+  background-color: yellow;
+}
+
+.logo-image {
+  max-width: 3rem !important;
+  max-height: 3rem !important;
+}
+
+.border-accent {
+  border-color: #d67070 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

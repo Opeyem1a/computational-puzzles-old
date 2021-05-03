@@ -18,20 +18,15 @@
 }
 
 @mixin small-shadow() {
-  @include shadow(0.15rem, 0.25rem);
+  @include shadow(0.1rem, 0.2rem, rgba(#5b5b5b, 0.1));
 }
 
 @mixin hover-shadow() {
-  @include smooth-transition();
   @include small-shadow();
 
   &:hover {
     @include soft-shadow();
   }
-}
-
-@mixin main-shadow() {
-  @include shadow(0.1rem, 0.5rem);
 }
 
 @mixin round-border($radius: 0.4rem) {

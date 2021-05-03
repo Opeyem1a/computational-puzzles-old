@@ -1,13 +1,18 @@
 $light: #fafafa;
-$bg-color: $light;
+$bg-color: #fff;
 $transparent: rgba(#fff, 0);
-$accent-color: #d67070;
-$second-color: #6AB8FF;
+
+
+$p-red: #d67070;
+$p-blue: #6AB8FF;
+$p-yellow: yellow;
+
+$accent-color: $p-red;
+$second-color: $p-blue;
 
 $success: #7aebb6;
 $almost: #ffa652;
 $failure: #ff5252;
 
-
-$shadow-color: rgba($accent-color, 0.2);
+$shadow-color: rgba($accent-color, 0.1);
 $main-gradient: linear-gradient(135deg, $accent-color 0%, rgba($accent-color, 0.75) 100%);

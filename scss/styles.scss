@@ -11,6 +11,7 @@ body {
   background-color: $white !important;
   color: $dark;
   opacity: 100%;
+
 }
 
 a {
@@ -101,6 +102,7 @@ footer {
 
 #puzzle-question {
   @extend .text-center;
+  @include smooth-transition();
   @include hover-shadow();
   background: $main-gradient;
 
@@ -155,14 +157,21 @@ footer {
   }
 }
 
-@include media-breakpoint-down(sm) {
-  #page-heading {
-    margin: 1rem auto;
-    text-align: center;
-  }
-}
+
+/* Breakpoints */
 
 @include media-breakpoint-down(md) {
+  .header-group {
+    .header-content {
+      display: block;
+      text-align: center !important;
+
+      #page-heading {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
   #puzzle-description, .puzzle-description {
     @include round-border();
     border-bottom-right-radius: 0;
@@ -248,6 +257,8 @@ footer {
   }
 }
 
+/* Purely Style */
+
 div.pattern {
   z-index: -1;
   position: fixed;
@@ -258,6 +269,45 @@ div.pattern {
   background-position: 0 0, 20px 20px;
 }
 
+.header-group {
+  #header-bar {
+    height: 0.5rem;
 
+    div {
+      border-radius: 0;
+    }
+  }
+}
 
+.header-group.content-section {
+  @extend .mb-0;
+}
 
+.white-block {
+  background-color: $light;
+}
+
+.bg-block {
+  background-color: $bg-color;
+}
+
+.red-block {
+  background-color: $p-red;
+}
+
+.blue-block {
+  background-color: $p-blue;
+}
+
+.yellow-block {
+  background-color: $p-yellow;
+}
+
+.logo-image {
+  max-width: 3rem !important;
+  max-height: 3rem !important;
+}
+
+.border-accent {
+  border-color: $accent-color !important;
+}
