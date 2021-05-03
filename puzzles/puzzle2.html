@@ -13,12 +13,27 @@
 <body>
 <!-- Main Page Content -->
 <div class="container d-flex flex-column mt-2 px-0">
+    <div class="header-group sticky-top content-section bg-block pt-2">
+        <div class="header-content row mt-3">
+            <img src="../assets/img/logo.png" alt="Puzzles! Logo"
+                 aria-label="Logo for Puzzles! website" class="logo-image"/>
+            <h1 id="page-heading" class="ml-2">Hunt Online</h1>
+        </div>
+
+        <div id="header-bar" class="row">
+            <div class="col red-block"></div>
+            <div class="col blue-block"></div>
+            <div class="col yellow-block"></div>
+        </div>
+    </div>
+
     <div id="loading-screen" class="headline-text">
         Loading...
     </div>
 
     <!-- Puzzle Display + Info -->
-    <div id="puzzle-display" class="row hover-shadow">
+    <div class="content-section">
+    <div id="puzzle-display" class="row hover-shadow border border-accent">
         <div id="puzzle-description" class="col-5">
             <small class="text-muted">Puzzle 2</small>
             <h5>Colourful!</h5>
@@ -30,21 +45,22 @@
             <img src="../assets/img/Puzzle%202%20-%20Colourful.png" alt="Puzzle Image" class="row mx-0"/>
         </div>
     </div>
+    </div>
 
     <!-- Question + Answers Form -->
-    <div id="puzzle-question-container">
+    <div id="puzzle-question-container" class="content-section">
         <div id="puzzle-question" class="h-auto">
             <h6 class="mx-auto">What is the fewest number of colours we can use to colour the "problem" image?</h6>
         </div>
-        <hr class="mb-0">
+        <hr/>
         <div id="puzzle-feedback"></div>
         <form class="d-lg-flex justify-content-between h-auto">
-            <div class="form-group mx-4">
-                <label for="puzzle-answer-text"></label>
+            <div class="form-group">
+                <label for="puzzle-answer-text" class="sr-only">Puzzle Answer</label>
                 <input type="number" id="puzzle-answer-text" class="form-control" placeholder="Your Answer..."/>
             </div>
         </form>
-        <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
 

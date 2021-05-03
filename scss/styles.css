@@ -7462,7 +7462,7 @@ div #puzzle-answer-options {
   margin: 0.25rem !important;
 }
 
-.mt-1,
+.mt-1, #puzzle-question-container button[type=submit],
 .my-1 {
   margin-top: 0.25rem !important;
 }
@@ -7510,7 +7510,7 @@ div #puzzle-answer-options {
   margin: 1rem !important;
 }
 
-.mt-3, #puzzle-answer-options, #puzzle-question-container button[type=submit], #puzzle-question-container,
+.mt-3, #puzzle-answer-options, #puzzle-question-container,
 .my-3 {
   margin-top: 1rem !important;
 }
@@ -10025,6 +10025,7 @@ footer {
   border-right: 0.6rem solid;
   border-radius: 0.2rem;
   height: 15rem;
+  width: auto;
 }
 #puzzle-feedback .gif-embed-correct {
   border-color: #7aebb6;

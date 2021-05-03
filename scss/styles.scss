@@ -72,7 +72,7 @@ footer {
   @extend .mt-3;
 
   button[type=submit] {
-    @extend .mt-3;
+    @extend .mt-1;
   }
 }
 
@@ -84,6 +84,7 @@ footer {
     border-right: 0.6rem solid;
     border-radius: 0.2rem;
     height: 15rem;
+    width: auto;
   }
 
   .gif-embed-correct {
@@ -97,7 +98,6 @@ footer {
   .gif-embed-incorrect {
     border-color: $red;
   }
-
 }
 
 #puzzle-question {
