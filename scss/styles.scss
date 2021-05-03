@@ -116,7 +116,7 @@ footer {
 }
 
 #puzzle-answer-options {
-  @extend .row, .mt-3;
+  @extend .row, .my-2;
 
   div.answer-option {
     @extend .col, .p-3;
@@ -130,7 +130,7 @@ footer {
     padding-left: 2.5rem !important;
 
     &:hover {
-      background-image: linear-gradient($secondary, $secondary), linear-gradient($transparent, $transparent);
+      background-image: $second-gradient, linear-gradient($transparent, $transparent);
     }
 
     // hovering over the label or checkbox itself shouldn't revert the cursor

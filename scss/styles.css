@@ -7487,7 +7487,8 @@ div #puzzle-answer-options {
 }
 
 .mt-2,
-.my-2 {
+.my-2,
+#puzzle-answer-options {
   margin-top: 0.5rem !important;
 }
 
@@ -7497,7 +7498,8 @@ div #puzzle-answer-options {
 }
 
 .mb-2,
-.my-2 {
+.my-2,
+#puzzle-answer-options {
   margin-bottom: 0.5rem !important;
 }
 
@@ -7510,7 +7512,7 @@ div #puzzle-answer-options {
   margin: 1rem !important;
 }
 
-.mt-3, #puzzle-answer-options, #puzzle-question-container,
+.mt-3, #puzzle-question-container,
 .my-3 {
   margin-top: 1rem !important;
 }
@@ -10069,7 +10071,7 @@ footer {
   box-shadow: 0.05rem 0.45rem 0.45rem rgba(214, 112, 112, 0.1);
 }
 #puzzle-answer-options div.answer-option:hover {
-  background-image: linear-gradient(#6c757d, #6c757d), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(135deg, #6AB8FF 0%, rgba(106, 184, 255, 0.75) 100%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 #puzzle-answer-options div.answer-option input, #puzzle-answer-options div.answer-option label {
   cursor: pointer;
