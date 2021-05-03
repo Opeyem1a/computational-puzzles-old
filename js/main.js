@@ -12,8 +12,8 @@ let feedbackGifs = {};
 let puzzleNum = 0;
 
 // initial app state before quiz is loaded up
-$('#puzzle-display').hide();
-$('#puzzle-question-container').hide();
+$('.content-section').hide();
+$('.header-group').show();
 $('#loading-screen').show();
 
 $(function () {
@@ -23,8 +23,7 @@ $(function () {
     loadFeedbackGifs();
     setupEventListeners();
     enableQuiz().then(() => {
-        $('#puzzle-display').show();
-        $('#puzzle-question-container').show();
+        $('.content-section').show();
         $('#loading-screen').hide();
     });
     restyleOptions();
@@ -44,6 +43,12 @@ const setupEventListeners = () => {
         $(el).on('click', () => {
             $(el).find('input').prop('checked', true);
             restyleOptions();
+        })
+    });
+    // enable the back to map button's functionality
+    $('a.map-link').each((i, el) => {
+        $(el).on('click', () => {
+            backToMap();
         })
     });
 }
@@ -74,6 +79,7 @@ const addAlert = (type, message) => {
 };
 
 const addFeedbackGif = (gifType) => {
+    // gifType is the same as the feedback code given from the checkAnswer method
     const offset = Math.floor(Math.random() * feedbackGifs[gifType]);
     const feedbackContainer = $('#puzzle-feedback');
     feedbackContainer.empty();
@@ -83,9 +89,12 @@ const addFeedbackGif = (gifType) => {
         return;
     }
 
+    const feedbackMessage = gifType === FEEDBACK.CORRECT ? 'Nice Work!' : 'That wasn\'t quite right - Try again!';
+
     const newEmbedGif = `<img id="feedback-gif" class="gif-embed gif-embed-${gifType} my-2"
                         src="${GIF_DIR}/${gifType}/${offset}.gif" alt="${gifType} - Gif"
-                        aria-label="You have ${gifType}ly answered this puzzle"/>`;
+                        aria-label="You have ${gifType}ly answered this puzzle"/>
+                        <p class="h6 my-2">${feedbackMessage}</p>`;
 
     feedbackContainer.append(newEmbedGif);
 };
@@ -107,6 +116,11 @@ const loadAnswerKey = () => {
 const enableQuiz = async () => {
     $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
         const feedbackCode = checkAnswer();
+        if(feedbackCode === FEEDBACK.CORRECT) {
+            $('button[type="submit"]').toggleClass('d-none');
+            $('a#success-map-link').toggleClass('d-none');
+            $('form#puzzle-answer-options').toggleClass('d-none');
+        }
         addFeedbackGif(feedbackCode);
     })
 };
@@ -119,3 +133,8 @@ const checkAnswer = () => {
     return userAnswer.toLowerCase() === answerKey[puzzleNum] ? FEEDBACK.CORRECT : FEEDBACK.INCORRECT;
 };
 
+const backToMap = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isOnlineMode = urlParams.get('online') === 'true';
+    window.location.href = isOnlineMode ? '../online.html' : '../outside.html';
+};

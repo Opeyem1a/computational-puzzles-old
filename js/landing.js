@@ -14,7 +14,8 @@ const clickHandler = (i, el, isOnlineMode) => {
 }
 
 const routeToPuzzle = (puzzleNum) => {
-    window.location.href = `${PUZZLES_DIR}/puzzle${puzzleNum}.html`;
+    const queryParams = `online=true`;
+    window.location.href = `${PUZZLES_DIR}/puzzle${puzzleNum}.html?${queryParams}`;
 };
 
 const showPuzzleHint = (el) => {
