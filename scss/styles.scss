@@ -122,6 +122,7 @@ footer {
     @include smooth-transition();
     @include hover-shadow();
     cursor: pointer;
+    background-color: $bg-color;
     border-color: $p-grey !important;
     padding-left: 2.5rem !important;
 
