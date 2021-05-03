@@ -10132,6 +10132,10 @@ footer {
   #puzzle-display #puzzle-description, #puzzle-display #puzzle-image, .puzzle-display #puzzle-description, .puzzle-display .puzzle-description, .puzzle-display #puzzle-image, .puzzle-display .puzzle-image {
     max-width: 100%;
   }
+
+  .finished-section {
+    text-align: center;
+  }
 }
 /* Class Styles */
 .headline-text {
@@ -10236,6 +10240,10 @@ div.pattern {
 }
 .map-image:hover {
   box-shadow: 0.05rem 0.45rem 0.45rem rgba(91, 91, 91, 0.15);
+}
+
+.finished-link {
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=styles.css.map */

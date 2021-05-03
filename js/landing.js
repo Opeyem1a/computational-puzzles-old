@@ -7,6 +7,10 @@ $(function () {
             clickHandler(i, el, isOnlineMode);
         })
     });
+
+    $('.finished-link').on('click', () => {
+        finishedPuzzles();
+    });
 });
 
 const clickHandler = (i, el, isOnlineMode) => {
@@ -31,4 +35,8 @@ const determineIfOnline = () => {
     const url = window.location.href;
     const mode = url.split('.html')[0].split('/').pop();
     return mode === 'online';
-}
+};
+
+const finishedPuzzles = () => {
+    window.location.href = `./thanks.html`;
+};

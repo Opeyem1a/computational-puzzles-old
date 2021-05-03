@@ -116,10 +116,12 @@ const loadAnswerKey = () => {
 const enableQuiz = async () => {
     $('#puzzle-question-container').find('button[type="submit"]').on('click', () => {
         const feedbackCode = checkAnswer();
-        if(feedbackCode === FEEDBACK.CORRECT) {
+        if (feedbackCode === FEEDBACK.CORRECT) {
+            // remove answer options if answered correctly
             $('button[type="submit"]').toggleClass('d-none');
-            $('a#success-map-link').toggleClass('d-none');
-            $('form#puzzle-answer-options').toggleClass('d-none');
+            $('a#success-map-link').toggleClass('d-none').toggleClass('d-inline-flex');
+            $('form#puzzle-answer-options')?.attr('style','display:none !important');
+            $('form.puzzle-form')?.attr('style','display:none !important');
         }
         addFeedbackGif(feedbackCode);
     })

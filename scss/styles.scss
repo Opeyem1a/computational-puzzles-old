@@ -219,6 +219,10 @@ footer {
       max-width: 100%;
     }
   }
+
+  .finished-section {
+    text-align: center;
+  }
 }
 
 
@@ -333,4 +337,8 @@ div.pattern {
   @include hover-shadow(rgba($p-grey, 0.15));
 
   height: 25rem;
+}
+
+.finished-link {
+  vertical-align: middle;
 }
