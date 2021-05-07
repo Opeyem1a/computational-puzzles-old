@@ -1,4 +1,4 @@
-const PUZZLES_DIR = `./puzzles`;
+const PUZZLES_DIR = `./hunt`;
 
 $(function () {
     const isOnlineMode = determineIfOnline();
