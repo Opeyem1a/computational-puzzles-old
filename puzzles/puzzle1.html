@@ -47,7 +47,7 @@
     <!-- Puzzle Display + Info -->
     <div class="content-section mt-0">
         <div id="puzzle-display" class="row hover-shadow border border-accent">
-            <div id="puzzle-description" class="col-5">
+            <div id="puzzle-description" class="col-7">
                 <small class="text-muted">Puzzle 1</small>
                 <h5>Pathfinder!</h5>
                 <p>This is a map, laid out as a grid like a chess board. Let's suppose
@@ -56,39 +56,40 @@
                     following moves:
                 </p>
                 <p class="font-underline">Possible moves:</p>
-                <p><span class="font-weight-bold">👣</span> - Move forward in the
-                    direction you are facing by 1 block.</p>
-                <p><span class="font-weight-bold">↶</span> - Turn left by 90⁰, without
-                    advancing forward.</p>
-                <p><span class="font-weight-bold">↷</span> - Turn right by 90⁰,
-                    without advancing forward.</p>
-                <hr>
-                <p>Example:</p>
-                <p>We've copied the original map to show you an example of how you can
-                    navigate on this map.
-                    Let's say you were given the following path:
+                <p><span class="iconify text-secondary h5" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                    - Move forward in the direction you are facing by 1 block.</p>
+                <p><span class="iconify text-secondary h5" data-icon="feather:corner-up-left" data-inline="false"></span>
+                    - Turn left by 90⁰, without advancing forward.</p>
+                <p><span class="iconify text-secondary h5" data-icon="feather:corner-up-right" data-inline="false"></span>
+                    - Turn right by 90⁰, without advancing forward.</p>
+            </div>
+            <div id="puzzle-image" class="d-flex flex-column justify-content-center col-5">
+                <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
+            </div>
+        </div>
 
-                <div class="text-secondary h4 mb-3">
+        <div class="puzzle-display row hover-shadow border border-accent mt-4">
+            <div class="puzzle-description col-7">
+                <h5>Example:</h5>
+                <p>We've copied the original map to show you an example of how you can
+                    navigate on this map. Let's say you were given the following path:
+
+                <div class="text-secondary h5 mb-3">
                     <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
                     <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
                     <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
                     <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
                     <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
                 </div>
 
                 <p>Starting from the bottom left corner, the first step is to move
                     forward and the second step is to turn right. At this point, you can
-                    see the map has a smiley face turned sideways to the right because
-                <p>This path leads us to block "D" as shown in the example. Cool, right? Now, let's use our pathfinding
+                    see the map has a smiley face turned sideways to the right.
+                <p>This path leads us to block "B" as shown in the example. Cool, right? Now, let's use our pathfinding
                     skills to find the hidden treasure!</p>
             </div>
-            <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
-                <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
+            <div class="puzzle-image d-flex flex-column justify-content-center col-5">
+                <img src="../assets/img/Puzzle%201%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
     </div>
@@ -99,7 +100,19 @@
             <h3 class="mb-0 thick-underline">Question</h3>
             <h6 class="mx-auto">Suppose we told you that there is hidden treasure
                 somewhere on this map and you can find it by following this path:</h6>
-            <p class="font-weight-bold">↷👣↶👣↷👣↶👣👣↶👣↶👣 </p>
+            <div class="text-primary h5">
+                <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
+                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
+            </div>
             <h6>Where is the treasure located?</h6>
         </div>
         <hr/>
