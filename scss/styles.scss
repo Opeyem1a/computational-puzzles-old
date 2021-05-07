@@ -42,11 +42,11 @@ footer {
 
 #puzzle-description {
   @extend .py-3, .px-4;
-  @include small-shadow();
   z-index: 2;
   background-color: $white;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  //border-right: 1px solid $primary;
 
   h5 {
     font-weight: 500;
