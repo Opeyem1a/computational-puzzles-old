@@ -28,58 +28,83 @@
     </div>
 
     <div class="content-section">
-        <h3>Map</h3>
-        <img src="assets/img/map.jpg" alt="Scavenger Hunt Map"
-             aria-label="Map used to identify puzzle locations"
-             class="map-image"/>
+        <h3 class="mb-3">Instructions</h3>
+        <p>
+            Below is a map for this outdoor scavenger hunt. Right now, the map has
+            3 puzzles for you to solve. Take a good look at the map and try to
+            figure out where you need to go.
+        </p>
+        <p>
+            Once you think you are close, look for a little QR code hanging
+            around. If you can't find it, click on the puzzle's location hint.
+            Once you find the QR code, scan it with an app on your phone, and it
+            will lead you to the puzzle page. Go to the puzzle and complete
+            it!
+        </p>
+
+        <p>
+            When you've found all the QR codes and finished all of the puzzles,
+            scroll to the bottom of the page and click "I'm all done!".
+        </p>
+
+        <p>
+            Good luck!
+        </p>
     </div>
 
-    <div class="content-section">
-        <h3>Instructions</h3>
-        <p>By clicking on the puzzles below, you will be given a hint for the location of that puzzle! Using both the
-            map and the hint, find the puzzle and then complete it!</p>
-        <p>When you've found and finished all of the puzzles, scroll to the bottom of the page and click "I'm all
-            done!". Good luck!</p>
-    </div>
-
-    <!-- Puzzle Display + Info -->
-    <div id="puzzles-drawer" class="px-4 mt-2">
-        <h3 class="thick-underline mb-3">Hints</h3>
-        <div class="puzzle-display row hover-shadow">
-            <div class="puzzle-description col">
-                <small class="text-muted">Puzzle 1</small>
-                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
-                <h5>Pathfinder!</h5>
-                <p class="d-none mb-2">Hint for puzzle 1.</p>
+    <div class="content-section mt-0">
+        <div class="row">
+            <div class="col-lg pl-0 mb-3 mb-lg-0">
+                <h3 class="mb-3">Map</h3>
+                <div class="map-image">
+                    <img src="assets/img/map.jpg" alt="Scavenger Hunt Map"
+                         aria-label="Map used to identify puzzle locations"/>
+                </div>
+                <p class="mt-2 muted font-italic">This map is currently not clickable, but it might be in the
+                    future!</p>
+            </div>
+            <div class="col-lg pr-0 mt-3 mt-lg-0">
+                <!-- Puzzle Display + Info -->
+                <div id="puzzles-drawer">
+                    <h3 class="mb-3">Hints</h3>
+                    <div class="puzzle-display row hover-shadow">
+                        <div class="puzzle-description col">
+                            <small class="text-muted">Puzzle 1</small>
+                            <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                            <h5>Pathfinder!</h5>
+                            <p class="d-none mb-2">Hint for puzzle 1.</p>
+                        </div>
+                    </div>
+                    <div class="puzzle-display row hover-shadow">
+                        <div class="puzzle-description col">
+                            <small class="text-muted">Puzzle 2</small>
+                            <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                            <h5>Colourful!</h5>
+                            <p class="d-none mb-2">Hint for puzzle 2.</p>
+                        </div>
+                    </div>
+                    <div class="puzzle-display row hover-shadow">
+                        <div class="puzzle-description col">
+                            <small class="text-muted">Puzzle 3</small>
+                            <small class="text-muted hint-reminder float-right">Click for a hint!</small>
+                            <h5>Routes!</h5>
+                            <p class="d-none mb-2">Hint for puzzle 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- "All Done" Button -->
+                <div class="finished-section">
+                    <hr/>
+                    <a class="btn btn-secondary finished-link d-inline-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-check-circle-fill my-auto mr-2" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                        </svg>
+                        I'm all done!
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="puzzle-display row hover-shadow">
-            <div class="puzzle-description col">
-                <small class="text-muted">Puzzle 2</small>
-                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
-                <h5>Colourful!</h5>
-                <p class="d-none mb-2">Hint for puzzle 2.</p>
-            </div>
-        </div>
-        <div class="puzzle-display row hover-shadow">
-            <div class="puzzle-description col">
-                <small class="text-muted">Puzzle 3</small>
-                <small class="text-muted hint-reminder float-right">Click for a hint!</small>
-                <h5>Routes!</h5>
-                <p class="d-none mb-2">Hint for puzzle 3.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-section mt-1 finished-section">
-        <hr/>
-        <a class="btn btn-secondary finished-link d-inline-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-check-circle-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-            I'm all done!
-        </a>
     </div>
 </div>
 
@@ -88,8 +113,7 @@
         Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a>
     </p>
     <p>
-        Made by <a href="https://github.com/Opeyem1a">me</a>, organized by
-        <a href="https://people.ok.ubc.ca/bowenhui/">her</a>.
+        Developed by <a href="https://github.com/Opeyem1a">Opey Adeyemi</a>
     </p>
 </footer>
 

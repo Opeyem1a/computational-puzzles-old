@@ -29,7 +29,7 @@ div {
 footer {
   @extend .mb-4;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 2.5rem;
 }
 
 
@@ -140,6 +140,7 @@ footer {
     color: $light;
     border-color: $light !important;
     background-image: $main-gradient, linear-gradient($transparent, $transparent);
+
     &:hover {
       border-color: $light !important;
     }
@@ -151,9 +152,13 @@ footer {
 
   div.puzzle-display {
     @extend .mb-3;
-
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  div.shift-in {
+    &:hover {
       margin-left: 2rem !important;
     }
   }
@@ -181,11 +186,19 @@ footer {
     }
   }
 
+  div.row {
+    div {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+
   #puzzle-description, .puzzle-description {
     @include round-border();
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
+
   #puzzle-image, .puzzle-image {
     img {
       @include round-border();
@@ -193,6 +206,7 @@ footer {
       border-top-left-radius: 0;
     }
   }
+
   #puzzle-question-container {
     text-align: center;
   }
@@ -252,6 +266,7 @@ footer {
   .puzzle-description {
     background-color: $transparent;
   }
+
   background-color: $accent-color;
   color: $light !important;
 }
@@ -332,11 +347,7 @@ div.pattern {
 }
 
 .map-image {
-  @include smooth-transition();
   @include round-border();
-  @include hover-shadow(rgba($p-grey, 0.15));
-
-  height: 25rem;
 }
 
 .finished-link {

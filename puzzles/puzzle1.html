@@ -2,127 +2,140 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <title>Puzzle 1: Pathfinder!</title>
-    <link href="../scss/styles.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TODO: fill this in (down) -->
-    <meta name="description" content="">
+  <meta charset="UTF-8"/>
+  <title>Puzzle 1: Pathfinder!</title>
+  <link href="../scss/styles.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: fill this in (down) -->
+  <meta name="description" content="">
 </head>
 
 <body>
 <div class="pattern vh-100 vw-100"></div>
 <!-- Main Page Content -->
 <div class="container d-flex flex-column px-0">
-    <div class="header-group sticky-top content-section bg-block pt-2">
-        <div class="header-content row mt-3">
-            <img src="../assets/img/logo.jpg" alt="Puzzles! Logo"
-                 aria-label="Logo for Puzzles! website" class="logo-image"/>
-            <h1 id="page-heading" class="ml-2">Hunt Online</h1>
-        </div>
-
-        <div id="header-bar" class="row">
-            <div class="col red-block"></div>
-            <div class="col blue-block"></div>
-            <div class="col yellow-block"></div>
-        </div>
+  <div class="header-group sticky-top content-section bg-block pt-2">
+    <div class="header-content row mt-3">
+      <img src="../assets/img/logo.jpg" alt="Puzzles! Logo"
+         aria-label="Logo for Puzzles! website" class="logo-image"/>
+      <h1 id="page-heading" class="ml-2">Hunt Online</h1>
     </div>
 
-    <div id="loading-screen" class="headline-text my-5">
-        Loading...
+    <div id="header-bar" class="row">
+      <div class="col red-block"></div>
+      <div class="col blue-block"></div>
+      <div class="col yellow-block"></div>
     </div>
+  </div>
 
-    <div class="content-section my-4">
-        <a class="btn btn-secondary map-link d-inline-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
-            </svg>
-            Back to Map
-        </a>
-    </div>
+  <div id="loading-screen" class="headline-text my-5">
+    Loading...
+  </div>
 
-    <!-- Puzzle Display + Info -->
-    <div class="content-section mt-0">
-        <div id="puzzle-display" class="row hover-shadow border border-accent">
-            <div id="puzzle-description" class="col-5">
-                <small class="text-muted">Puzzle 1</small>
-                <h5>Pathfinder!</h5>
-                <p>On this map, you'll find many individual blocks. We can describe a path from any block to another
-                    with a series of instructions.</p>
-                <p class="font-underline">Legend:</p>
-                <p><span class="font-weight-bold">👣</span> - Move forward by 1 block.</p>
-                <p><span class="font-weight-bold">↶</span> - Turn left by 90⁰.</p>
-                <p><span class="font-weight-bold">↷</span> - Turn right by 90⁰.</p>
-                <hr>
-                <p>For example:</p>
-                <p class="font-weight-bold">👣↷👣↶👣↷👣👣↷👣</p>
-                <p>This path leads us to block "D" as shown in the example. Cool, right? Now, let's use our pathfinding
-                    skills to find the hidden treasure!</p>
-            </div>
-            <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
-                <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
-            </div>
-        </div>
-    </div>
+  <div class="content-section my-4">
+    <a class="btn btn-secondary map-link d-inline-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
+      </svg>
+      Back to Map
+    </a>
+  </div>
 
-    <!-- Question + Answers Form -->
-    <div id="puzzle-question-container" class="content-section">
-        <div id="puzzle-question" class="h-auto">
-            <h3 class="mb-0 thick-underline">Question</h3>
-            <h6 class="mx-auto">The path to the treasure is:</h6>
-            <p class="font-weight-bold">↷👣↶👣↷👣↶👣👣↶👣↶👣 </p>
-            <h6>Where is the treasure located?</h6>
-        </div>
-        <hr/>
-        <div id="puzzle-feedback"></div>
-        <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
-            <div class="form-check answer-option">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption1"
-                       value="A">
-                <label class="form-check-label" for="answerOption1">
-                    A
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption2"
-                       value="B">
-                <label class="form-check-label" for="answerOption2">
-                    B
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption3"
-                       value="C">
-                <label class="form-check-label" for="answerOption3">
-                    C
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption4"
-                       value="D">
-                <label class="form-check-label" for="answerOption4">
-                    D
-                </label>
-            </div>
-        </form>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a id="success-map-link" class="btn btn-secondary map-link d-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
-            </svg>
-            Back to Map
-        </a>
+  <!-- Puzzle Display + Info -->
+  <div class="content-section mt-0">
+    <div id="puzzle-display" class="row hover-shadow border border-accent">
+      <div id="puzzle-description" class="col-5">
+        <small class="text-muted">Puzzle 1</small>
+        <h5>Pathfinder!</h5>
+        <p>This is a map, laid out as a grid like a chess board. Let's suppose
+        you are standing in the block with the smiley face at the bottom left
+        corner. You can move from one block to the next, using one of the
+        following moves:
+        </p>
+        <p class="font-underline">Possible moves:</p>
+        <p><span class="font-weight-bold">👣</span> - Move forward in the
+        direction you are facing by 1 block.</p>
+        <p><span class="font-weight-bold">↶</span> - Turn left by 90⁰, without
+        advancing forward.</p>
+        <p><span class="font-weight-bold">↷</span> - Turn right by 90⁰,
+        without advancing forward.</p>
+        <hr>
+        <p>Example:</p>
+        <p>We've copied the original map to show you an example of how you can
+        navigate on this map.
+        Let's say you were given the following path: 
+        <p class="font-weight-bold">👣↷👣↶👣↷👣👣↷👣</p>
+        <p>Starting from the bottom left corner, the first step is to move
+        forward and the second step is to turn right. At this point, you can
+        see the map has a smiley face turned sideways to the right because 
+        <p>This path leads us to block "D" as shown in the example. Cool, right? Now, let's use our pathfinding
+          skills to find the hidden treasure!</p>
+      </div>
+      <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
+        <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
+      </div>
     </div>
+  </div>
+
+  <!-- Question + Answers Form -->
+  <div id="puzzle-question-container" class="content-section">
+    <div id="puzzle-question" class="h-auto">
+      <h3 class="mb-0 thick-underline">Question</h3>
+      <h6 class="mx-auto">Suppose we told you that there is hidden treasure
+      somewhere on this map and you can find it by following this path:</h6>
+      <p class="font-weight-bold">↷👣↶👣↷👣↶👣👣↶👣↶👣 </p>
+      <h6>Where is the treasure located?</h6>
+    </div>
+    <hr/>
+    <div id="puzzle-feedback"></div>
+    <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
+      <div class="form-check answer-option">
+        <input class="form-check-input" type="radio" name="answerOptions" id="answerOption1"
+             value="A">
+        <label class="form-check-label" for="answerOption1">
+          A
+        </label>
+      </div>
+      <div class="form-check answer-option ml-3">
+        <input class="form-check-input" type="radio" name="answerOptions" id="answerOption2"
+             value="B">
+        <label class="form-check-label" for="answerOption2">
+          B
+        </label>
+      </div>
+      <div class="form-check answer-option ml-3">
+        <input class="form-check-input" type="radio" name="answerOptions" id="answerOption3"
+             value="C">
+        <label class="form-check-label" for="answerOption3">
+          C
+        </label>
+      </div>
+      <div class="form-check answer-option ml-3">
+        <input class="form-check-input" type="radio" name="answerOptions" id="answerOption4"
+             value="D">
+        <label class="form-check-label" for="answerOption4">
+          D
+        </label>
+      </div>
+    </form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a id="success-map-link" class="btn btn-secondary map-link d-none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
+      </svg>
+      Back to Map
+    </a>
+  </div>
 </div>
 
 <footer>
-    <p class="mb-1">
-        Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a>
-    </p>
-    <p>
-        Made by <a href="https://github.com/Opeyem1a">me</a>, organized by
-        <a href="https://people.ok.ubc.ca/bowenhui/">her</a>.
-    </p>
+  <p class="mb-1">
+    Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a>
+  </p>
+  <p>
+    Made by <a href="https://github.com/Opeyem1a">me</a>, organized by
+    <a href="https://people.ok.ubc.ca/bowenhui/">her</a>.
+  </p>
 </footer>
 
 <script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>

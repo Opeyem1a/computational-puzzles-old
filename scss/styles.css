@@ -9980,7 +9980,7 @@ div {
 }
 footer {
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 2.5rem;
 }
 
 /* ID Styles */
@@ -10078,6 +10078,8 @@ footer {
 
 #puzzles-drawer div.puzzle-display:hover {
   cursor: pointer;
+}
+#puzzles-drawer div.shift-in:hover {
   margin-left: 2rem !important;
 }
 
@@ -10095,6 +10097,11 @@ footer {
   }
   .header-group .header-content #page-heading {
     margin-left: 0 !important;
+  }
+
+  div.row div, div#puzzle-answer-options div {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   #puzzle-description, .puzzle-display .puzzle-description, .puzzle-description {
@@ -10228,18 +10235,7 @@ div.pattern {
 }
 
 .map-image {
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   border-radius: 0.4rem;
-  box-shadow: 0.05rem 0.1rem 0.2rem rgba(91, 91, 91, 0.1);
-  height: 25rem;
-}
-@media (prefers-reduced-motion: reduce) {
-  .map-image {
-    transition: none;
-  }
-}
-.map-image:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(91, 91, 91, 0.15);
 }
 
 .finished-link {
