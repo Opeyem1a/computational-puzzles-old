@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TODO: fill this in (down) -->
     <meta name="description" content="">
+    <script src="../js/iconify/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
@@ -34,8 +35,10 @@
 
     <div class="content-section my-4">
         <a class="btn btn-secondary map-link d-inline-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
             </svg>
             Back to Map
         </a>
@@ -43,30 +46,37 @@
 
     <!-- Puzzle Display + Info -->
     <div class="content-section mt-0">
-    <div id="puzzle-display" class="row hover-shadow border border-accent">
-        <div id="puzzle-description" class="col-5">
-            <small class="text-muted">Puzzle 3</small>
-            <h5>Routes!</h5>
-            <p>As a mailman, you need to walk from the Post Office (<span class="iconify" data-icon="bi:house-door-fill" data-inline="false"></span>) to a certain house to deliver your letters.
-                There's
-                only 1 issue - each road requires energy to walk through! Remember, you want to use the minimum amount
-                of
-                energy possible while delivering your letters.</p>
-            <p>Each time you walk along a road <span class="font-italic">(one of the lines)</span> you have to use up the amount of energy indicated by
-                the number on that line.</p>
-            <hr>
-            <p>Let's try an example:</p>
-            <p>You have a letter addressed for House A. To get from the Post Office (🏠) to House A, here are 3
-                potential routes <span class="font-italic">(there are tons more!)</span>.</p>
-            <p>Route 1: 🏠 → A <span class="font-italic">(Uses 3 energy)</span></p>
-            <p>Route 2: 🏠 → C → A <span class="font-italic">(Uses 2 energy)</span></p>
-            <p>Route 3: 🏠 → C → E → A <span class="font-italic">(Uses 5 energy)</span></p>
-            <p>So route 2 wins!</p>
+        <div id="puzzle-display" class="row hover-shadow border border-accent">
+            <div id="puzzle-description" class="col-7">
+                <small class="text-muted">Puzzle 3</small>
+                <h5>Routes!</h5>
+                <p>As a mailman, you need to walk from the Post Office
+                    (<span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
+                    to a certain house to deliver your letters.
+                    There's only 1 issue - each road requires energy to walk through! Remember, you want to use the
+                    minimum amount of energy possible while delivering your letters.</p>
+                <p>Each time you walk along a road <span class="font-italic">(one of the lines)</span> you have to use
+                    up the amount of energy indicated by the number on that line.</p>
+            </div>
+            <div id="puzzle-image" class="d-flex flex-column justify-content-center col-5">
+                <img src="../assets/img/Puzzle%203%20-%20Routes.jpg" alt="Puzzle Image" class="row mx-0"/>
+            </div>
         </div>
-        <div id="puzzle-image" class="d-flex flex-column justify-content-center col-7">
-            <img src="../assets/img/Puzzle%203%20-%20Routes.jpg" alt="Puzzle Image" class="row mx-0"/>
+
+        <div class="puzzle-display row hover-shadow border border-accent mt-4">
+            <div class="puzzle-description col-7">
+                <h5>Example:</h5>
+                <p>You have a letter addressed for <span class="font-weight-bold text-secondary">Ann</span>. To get from the Post Office
+                    (<span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
+                    to Ann's House, here are 2 potential routes <span class="font-italic">(there are tons more!)</span>.</p>
+                <p>Route 1: <span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Ann's House <span class="font-italic">(Uses 3 energy)</span></p>
+                <p>Route 2: <span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Cam's House → Ann's House <span class="font-italic">(Uses 2 energy)</span></p>
+                <p>So route 2 wins!</p>
+            </div>
+            <div class="puzzle-image d-flex flex-column justify-content-center col-5">
+                <img src="../assets/img/Puzzle%203%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
+            </div>
         </div>
-    </div>
     </div>
 
     <!-- Question + Answers Form -->
@@ -86,8 +96,10 @@
         </form>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a id="success-map-link" class="btn btn-secondary map-link d-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
             </svg>
             Back to Map
         </a>
