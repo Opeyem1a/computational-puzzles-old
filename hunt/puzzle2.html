@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Puzzle 3: Routes!</title>
+    <title>Puzzle 2: Colouring!</title>
     <link href="../scss/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TODO: fill this in (down) -->
     <meta name="description" content="">
-    <script src="../js/iconify/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
@@ -48,33 +47,27 @@
     <div class="content-section mt-0">
         <div id="puzzle-display" class="row hover-shadow border border-accent">
             <div id="puzzle-description" class="col-7">
-                <small class="text-muted">Puzzle 3</small>
-                <h5>Routes!</h5>
-                <p>As a mailman, you need to walk from the Post Office
-                    (<span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
-                    to a certain house to deliver your letters.
-                    There's only 1 issue - each road requires energy to walk through! Remember, you want to use the
-                    minimum amount of energy possible while delivering your letters.</p>
-                <p>Each time you walk along a road <span class="font-italic">(one of the lines)</span> you have to use
-                    up the amount of energy indicated by the number on that line.</p>
+                <h5 class="mt-2">Colourful!</h5>
+                <p>I'll let you in on a secret - There's a special way to colour images!</p>
+                <p>The rules are that you have to colour the image in a way so that no matter which line you pick, there
+                    are different colours on either side of the line. Check out the example to see what we mean!</p>
             </div>
             <div id="puzzle-image" class="d-flex flex-column justify-content-center col-5">
-                <img src="../assets/img/Puzzle%203%20-%20Routes.jpg" alt="Puzzle Image" class="row mx-0"/>
+                <img src="../assets/img/Puzzle%202%20-%20Colourful.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
 
         <div class="puzzle-display row hover-shadow border border-accent mt-4">
             <div class="puzzle-description col-7">
-                <h5>Example:</h5>
-                <p>You have a letter addressed for <span class="font-weight-bold text-secondary">Ann</span>. To get from the Post Office
-                    (<span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
-                    to Ann's House, here are 2 potential routes <span class="font-italic">(there are tons more!)</span>.</p>
-                <p>Route 1: <span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Ann's House <span class="font-italic">(Uses 3 energy)</span></p>
-                <p>Route 2: <span class="iconify text-secondary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Cam's House → Ann's House <span class="font-italic">(Uses 2 energy)</span></p>
-                <p>So route 2 wins!</p>
+                <h5 class="mt-2">Example:</h5>
+                <p>Say we wanted to colour in this simple image in our special way.</p>
+                <p>The first attempt doesn't work, since some colours are touching across lines.</p>
+                <p>The second attempt, however, manages to colour the image without any of the colours touching one another</p>
+                <p>Even better, we used the minimum number of colours needed to colour this example image in our special
+                    way!</p>
             </div>
             <div class="puzzle-image d-flex flex-column justify-content-center col-5">
-                <img src="../assets/img/Puzzle%203%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
+                <img src="../assets/img/Puzzle%202%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
     </div>
@@ -82,10 +75,8 @@
     <!-- Question + Answers Form -->
     <div id="puzzle-question-container" class="content-section">
         <div id="puzzle-question" class="h-auto">
-            <h3 class="mb-0 thick-underline">Question</h3>
-            <h6 class="mx-auto">What is the minimum energy required to deliver a letter from the Post Office
-                (<span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>) to
-                <span class="font-weight-bold text-primary">Dan's House</span>?</h6>
+            <h3 class="mb-0 thick-underline">Quest</h3>
+            <h6 class="mx-auto">What is the fewest number of colours we can use to colour our image of Zom?</h6>
         </div>
         <hr/>
         <div id="puzzle-feedback"></div>
@@ -115,7 +106,6 @@
         Developed by <a href="https://github.com/Opeyem1a">Opey Adeyemi</a> and <a href="https://people.ok.ubc.ca/bowenhui/">Dr. Bowen Hui</a>
     </p>
 </footer>
-
 <script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../js/main.js"></script>
