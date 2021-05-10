@@ -62,7 +62,7 @@ footer {
   background: $transparent;
 
   img {
-    @extend .my-0, .h-auto, .w-auto;
+    @extend .my-0, .h-100, .w-100;
     @include round-border();
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;

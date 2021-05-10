@@ -120,15 +120,15 @@ const enableQuiz = async () => {
             // remove answer options if answered correctly
             $('button[type="submit"]').toggleClass('d-none');
             $('a#success-map-link').toggleClass('d-none').toggleClass('d-inline-flex');
-            $('form#puzzle-answer-options')?.attr('style','display:none !important');
-            $('form.puzzle-form')?.attr('style','display:none !important');
+            $('form#puzzle-answer-options').attr('style','display:none !important');
+            $('form.puzzle-form').attr('style','display:none !important');
         }
         addFeedbackGif(feedbackCode);
     })
 };
 
 const checkAnswer = () => {
-    const userAnswer = $('#puzzle-answer-options')?.find('input:checked').val() || $('#puzzle-answer-text')?.val();
+    const userAnswer = $('#puzzle-answer-options').find('input:checked').val() || $('#puzzle-answer-text').val();
 
     if (!userAnswer)
         return FEEDBACK.NONE;

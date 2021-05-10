@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Puzzle 1: Pathfinder!</title>
+    <title>Puzzle 2: Colouring!</title>
     <link href="../scss/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TODO: fill this in (down) -->
     <meta name="description" content="">
-    <script src="../js/iconify/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
@@ -48,47 +47,27 @@
     <div class="content-section mt-0">
         <div id="puzzle-display" class="row hover-shadow border border-accent">
             <div id="puzzle-description" class="col-7">
-                <h5 class="mt-2">Pathfinder!</h5>
-                <p>This is a map, laid out as a grid like a chess board. Let's suppose
-                    you are standing in the block with the smiley face at the bottom left
-                    corner. You can move from one block to the next, using one of the
-                    following moves:
-                </p>
-                <p class="font-underline">Possible moves:</p>
-                <p><span class="iconify text-primary h5" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    - Move forward in the direction you are facing by 1 block.</p>
-                <p><span class="iconify text-primary h5" data-icon="feather:corner-up-left" data-inline="false"></span>
-                    - Turn left by 90⁰, without advancing forward.</p>
-                <p><span class="iconify text-primary h5" data-icon="feather:corner-up-right" data-inline="false"></span>
-                    - Turn right by 90⁰, without advancing forward.</p>
+                <h5 class="mt-2">Colourful!</h5>
+                <p>I'll let you in on a secret - There's a special way to colour images!</p>
+                <p>The rules are that you have to colour the image in a way so that no matter which line you pick, there
+                    are different colours on either side of the line. Check out the example to see what we mean!</p>
             </div>
             <div id="puzzle-image" class="d-flex flex-column justify-content-center col-5">
-                <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
+                <img src="../assets/img/Puzzle%202%20-%20Colourful.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
 
         <div class="puzzle-display row hover-shadow border border-accent mt-4">
             <div class="puzzle-description col-7">
                 <h5 class="mt-2">Example:</h5>
-                <p>We've copied the original map to show you an example of how you can
-                    navigate on this map. Let's say you were given the following path:
-
-                <div class="text-primary h5 mb-3">
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                    <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
-                    <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                </div>
-
-                <p>Starting from the bottom left corner, the first step is to move
-                    forward and the second step is to turn right. At this point, you can
-                    see the map has a smiley face turned sideways to the right.
-                <p>This path leads us to block "B" as shown in the example. Cool, right? Now, let's use our pathfinding
-                    skills to find the hidden treasure!</p>
+                <p>Say we wanted to colour in this simple image in our special way.</p>
+                <p>The first attempt doesn't work, since some colours are touching across lines.</p>
+                <p>The second attempt, however, manages to colour the image without any of the colours touching one another</p>
+                <p>Even better, we used the minimum number of colours needed to colour this example image in our special
+                    way!</p>
             </div>
             <div class="puzzle-image d-flex flex-column justify-content-center col-5">
-                <img src="../assets/img/Puzzle%201%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
+                <img src="../assets/img/Puzzle%202%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
     </div>
@@ -97,53 +76,14 @@
     <div id="puzzle-question-container" class="content-section">
         <div id="puzzle-question" class="h-auto">
             <h3 class="mb-0 thick-underline">Quest</h3>
-            <h6 class="mx-auto">Suppose we told you that there is hidden treasure
-                somewhere on this map and you can find it by following this path:</h6>
-            <div class="text-primary h5">
-                <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                <span class="iconify" data-icon="feather:corner-up-right" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-                <span class="iconify" data-icon="feather:corner-up-left" data-inline="false"></span>
-                <span class="iconify" data-icon="ion:footsteps-sharp" data-inline="false"></span>
-            </div>
-            <h6>Where is the treasure located?</h6>
+            <h6 class="mx-auto">What is the fewest number of colours we can use to colour our image of Zom?</h6>
         </div>
         <hr/>
         <div id="puzzle-feedback"></div>
-        <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
-            <div class="form-check answer-option">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption1"
-                       value="A">
-                <label class="form-check-label" for="answerOption1">
-                    A
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption2"
-                       value="B">
-                <label class="form-check-label" for="answerOption2">
-                    B
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption3"
-                       value="C">
-                <label class="form-check-label" for="answerOption3">
-                    C
-                </label>
-            </div>
-            <div class="form-check answer-option ml-3">
-                <input class="form-check-input" type="radio" name="answerOptions" id="answerOption4"
-                       value="D">
-                <label class="form-check-label" for="answerOption4">
-                    D
-                </label>
+        <form class="puzzle-form d-lg-flex justify-content-between h-auto">
+            <div class="form-group">
+                <label for="puzzle-answer-text" class="sr-only">Puzzle Answer</label>
+                <input type="number" id="puzzle-answer-text" class="form-control" placeholder="Your Answer..."/>
             </div>
         </form>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -166,7 +106,6 @@
         Developed by <a href="https://github.com/Opeyem1a">Opey Adeyemi</a> and <a href="https://people.ok.ubc.ca/bowenhui/">Dr. Bowen Hui</a>
     </p>
 </footer>
-
 <script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../js/main.js"></script>

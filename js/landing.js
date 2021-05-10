@@ -23,12 +23,12 @@ const routeToPuzzle = (puzzleNum) => {
 };
 
 const showPuzzleHint = (el) => {
-    $(el)?.toggleClass('selected');
+    $(el).toggleClass('selected');
 
-    const descDiv = $(el)?.find('div.puzzle-description');
-    descDiv?.find('p')?.toggleClass('d-none');
-    descDiv?.find('small.hint-reminder')?.toggleClass('d-none');
-    descDiv?.find('small').toggleClass('text-muted');
+    const descDiv = $(el).find('div.puzzle-description');
+    descDiv.find('p').toggleClass('d-none');
+    descDiv.find('small.hint-reminder').toggleClass('d-none');
+    descDiv.find('small').toggleClass('text-muted');
 };
 
 const determineIfOnline = () => {

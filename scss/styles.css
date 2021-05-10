@@ -7372,11 +7372,11 @@ button.bg-dark:focus {
   width: 75% !important;
 }
 
-.w-100, .headline-text {
+.w-100, .headline-text, #puzzle-image img, .puzzle-display .puzzle-image img {
   width: 100% !important;
 }
 
-.w-auto, #puzzle-image img, .puzzle-display .puzzle-image img {
+.w-auto {
   width: auto !important;
 }
 
@@ -7392,11 +7392,11 @@ button.bg-dark:focus {
   height: 75% !important;
 }
 
-.h-100 {
+.h-100, #puzzle-image img, .puzzle-display .puzzle-image img {
   height: 100% !important;
 }
 
-.h-auto, #puzzle-image img, .puzzle-display .puzzle-image img {
+.h-auto {
   height: auto !important;
 }
 
