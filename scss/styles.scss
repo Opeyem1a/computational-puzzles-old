@@ -64,7 +64,7 @@ footer {
   background: $transparent;
 
   img {
-    @extend .my-0, .h-100, .w-100;
+    @extend .my-0, .h-auto, .w-100;
     @include round-border();
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -352,4 +352,22 @@ div.pattern {
 
 .finished-link {
   vertical-align: middle;
+}
+
+.collapsable {
+  @include smooth-transition();
+}
+
+.caret {
+  @include smooth-transition();
+}
+
+.caret.expanded {
+  transform: rotate(180deg) !important;
+}
+
+.example-block {
+  &:hover {
+    cursor: pointer;
+  }
 }

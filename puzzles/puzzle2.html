@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Puzzle 1: Pathfinder!</title>
+    <title>Puzzle 2: Pathfinder!</title>
     <link href="../scss/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TODO: fill this in (down) -->
-    <meta name="description" content="">
+    <meta name="description" content="Puzzle 2">
     <script src="../js/iconify/1.0.7/iconify.min.js"></script>
 </head>
 
@@ -35,11 +34,7 @@
 
     <div class="content-section my-4">
         <a class="btn btn-secondary map-link d-inline-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                      d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
-            </svg>
+            <span class="iconify my-auto mr-2" data-icon="fa-solid:map" data-inline="false"></span>
             Back to Map
         </a>
     </div>
@@ -62,14 +57,19 @@
                 <p><span class="iconify text-primary h5" data-icon="feather:corner-up-right" data-inline="false"></span>
                     - Turn right by 90⁰, without advancing forward.</p>
             </div>
-            <div id="puzzle-image" class="d-flex flex-column justify-content-center col-5">
+            <div id="puzzle-image" class="col-5">
                 <img src="../assets/img/Puzzle%201%20-%20Pathfinder.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
 
-        <div class="puzzle-display row hover-shadow border border-accent mt-4">
-            <div class="puzzle-description col-7">
-                <h5 class="mt-2">Example:</h5>
+        <div class="example-block puzzle-display row hover-shadow border border-accent mt-4">
+            <div class="puzzle-description pb-0 col-12">
+                <h5 class="mt-2">Example
+                    <span class="iconify caret float-right text-primary h4"
+                          data-icon="bx:bx-chevron-up" data-inline="false"></span>
+                </h5>
+            </div>
+            <div class="puzzle-description pt-0 col-7 collapsable">
                 <p>We've copied the original map to show you an example of how you can
                     navigate on this map. Let's say you were given the following path:
 
@@ -87,7 +87,7 @@
                 <p>This path leads us to block "B" as shown in the example. Cool, right? Now, let's use our pathfinding
                     skills to find the hidden treasure!</p>
             </div>
-            <div class="puzzle-image d-flex flex-column justify-content-center col-5">
+            <div class="puzzle-image col-5 collapsable">
                 <img src="../assets/img/Puzzle%201%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
             </div>
         </div>
@@ -116,7 +116,7 @@
         </div>
         <hr/>
         <div id="puzzle-feedback"></div>
-        <form id="puzzle-answer-options" class="d-lg-flex justify-content-between h-auto">
+        <form id="puzzle-answer-options" class="d-flex justify-content-between h-auto">
             <div class="form-check answer-option">
                 <input class="form-check-input" type="radio" name="answerOptions" id="answerOption1"
                        value="A">
@@ -169,7 +169,7 @@
 
 <script src="../js/jquery/3.6.0/jquery-3.6.0.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/puzzles.js"></script>
 </body>
 
 </html>

@@ -51,6 +51,12 @@ const setupEventListeners = () => {
             backToMap();
         })
     });
+    // allow click to toggle visibility of example block(s)
+    $('div.example-block').each((i, el) => {
+        $(el).on('click', () => {
+            toggleExample(el);
+        })
+    })
 }
 
 // Logic Functions
@@ -120,8 +126,8 @@ const enableQuiz = async () => {
             // remove answer options if answered correctly
             $('button[type="submit"]').toggleClass('d-none');
             $('a#success-map-link').toggleClass('d-none').toggleClass('d-inline-flex');
-            $('form#puzzle-answer-options').attr('style','display:none !important');
-            $('form.puzzle-form').attr('style','display:none !important');
+            $('form#puzzle-answer-options').attr('style', 'display:none !important');
+            $('form.puzzle-form').attr('style', 'display:none !important');
         }
         addFeedbackGif(feedbackCode);
     })
@@ -139,4 +145,12 @@ const backToMap = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const isOnlineMode = urlParams.get('online') === 'true';
     window.location.href = isOnlineMode ? '../online.html' : '../outside.html';
+};
+
+const toggleExample = (el) => {
+    const jqEl = $(el);
+    jqEl.toggleClass('collapsed');
+    jqEl.find('div.collapsable').toggleClass('d-none');
+    jqEl.find('div.puzzle-description').toggleClass('pb-0 p-2');
+    jqEl.find('.iconify').toggleClass('expanded');
 };

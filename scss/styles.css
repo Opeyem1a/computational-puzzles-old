@@ -7392,11 +7392,11 @@ button.bg-dark:focus {
   height: 75% !important;
 }
 
-.h-100, #puzzle-image img, .puzzle-display .puzzle-image img {
+.h-100 {
   height: 100% !important;
 }
 
-.h-auto {
+.h-auto, #puzzle-image img, .puzzle-display .puzzle-image img {
   height: auto !important;
 }
 
@@ -9990,7 +9990,7 @@ footer {
   }
 }
 #puzzle-display:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.1);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.15);
 }
 
 #puzzle-description, .puzzle-display .puzzle-description {
@@ -10056,7 +10056,7 @@ footer {
   }
 }
 #puzzle-answer-options div.answer-option:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.1);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.15);
 }
 #puzzle-answer-options div.answer-option:hover {
   border-color: #FF7979 !important;
@@ -10154,7 +10154,7 @@ footer {
   }
 }
 .puzzle-display:hover {
-  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.1);
+  box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.15);
 }
 .puzzle-display:hover {
   border-left-width: 1.5rem;
@@ -10237,6 +10237,32 @@ div.pattern {
 
 .finished-link {
   vertical-align: middle;
+}
+
+.collapsable {
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsable {
+    transition: none;
+  }
+}
+
+.caret {
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    transition: none;
+  }
+}
+
+.caret.expanded {
+  transform: rotate(180deg) !important;
+}
+
+.example-block:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
