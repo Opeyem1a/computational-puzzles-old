@@ -158,12 +158,6 @@ footer {
       cursor: pointer;
     }
   }
-
-  div.shift-in {
-    &:hover {
-      margin-left: 2rem !important;
-    }
-  }
 }
 
 
@@ -254,6 +248,10 @@ footer {
   @include hover-shadow();
   border: 0.1rem solid $accent-color;
 
+  &:hover {
+    border-left-width: 1.5rem;
+  }
+
   .puzzle-description {
     @extend #puzzle-description;
     @include round-border();
@@ -267,6 +265,10 @@ footer {
 .puzzle-display.selected {
   border-color: $p-blue;
   border-left-width: 1.5rem;
+
+  &:hover {
+    border-left-width: 1.75rem;
+  }
 }
 
 .content-section {

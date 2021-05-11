@@ -10076,9 +10076,6 @@ footer {
 #puzzles-drawer div.puzzle-display:hover {
   cursor: pointer;
 }
-#puzzles-drawer div.shift-in:hover {
-  margin-left: 2rem !important;
-}
 
 /* Breakpoints */
 @media (max-width: 767.98px) {
@@ -10159,12 +10156,18 @@ footer {
 .puzzle-display:hover {
   box-shadow: 0.05rem 0.45rem 0.45rem rgba(255, 121, 121, 0.1);
 }
+.puzzle-display:hover {
+  border-left-width: 1.5rem;
+}
 .puzzle-display .puzzle-description {
   border-radius: 0.4rem;
 }
 .puzzle-display.selected {
   border-color: #6AB8FF;
   border-left-width: 1.5rem;
+}
+.puzzle-display.selected:hover {
+  border-left-width: 1.75rem;
 }
 
 .content-section {
