@@ -7661,9 +7661,7 @@ div #puzzle-answer-options {
 }
 
 .pt-3,
-.py-3,
-#puzzle-description,
-.puzzle-display .puzzle-description {
+.py-3 {
   padding-top: 1rem !important;
 }
 
@@ -7673,9 +7671,7 @@ div #puzzle-answer-options {
 }
 
 .pb-3,
-.py-3,
-#puzzle-description,
-.puzzle-display .puzzle-description {
+.py-3 {
   padding-bottom: 1rem !important;
 }
 
@@ -10002,6 +9998,8 @@ footer {
   background-color: #fff;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 #puzzle-description h5, .puzzle-display .puzzle-description h5 {
   font-weight: 500;
@@ -10165,11 +10163,8 @@ footer {
   border-radius: 0.4rem;
 }
 .puzzle-display.selected {
-  background-color: #FF7979;
-  color: #fafafa !important;
-}
-.puzzle-display.selected .puzzle-description {
-  background-color: rgba(255, 255, 255, 0);
+  border-color: #6AB8FF;
+  border-left-width: 1.5rem;
 }
 
 .content-section {

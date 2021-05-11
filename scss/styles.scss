@@ -41,11 +41,13 @@ footer {
 }
 
 #puzzle-description {
-  @extend .py-3, .px-4;
+  @extend .px-4;
   z-index: 2;
   background-color: $white;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   //border-right: 1px solid $primary;
 
   h5 {
@@ -263,12 +265,8 @@ footer {
 }
 
 .puzzle-display.selected {
-  .puzzle-description {
-    background-color: $transparent;
-  }
-
-  background-color: $accent-color;
-  color: $light !important;
+  border-color: $p-blue;
+  border-left-width: 1.5rem;
 }
 
 .content-section {
