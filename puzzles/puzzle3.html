@@ -44,13 +44,16 @@
         <div id="puzzle-display" class="row hover-shadow border border-accent">
             <div id="puzzle-description" class="col-7">
                 <h5 class="mt-2">Routes!</h5>
-                <p>As a mailman, you need to walk from the Post Office
-                    (<span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
-                    to a certain house to deliver your letters.
-                    There's only 1 issue - each road requires energy to walk through! Remember, you want to use the
-                    minimum amount of energy possible while delivering your letters.</p>
-                <p>Each time you walk along a road <span class="font-italic">(one of the lines)</span> you have to use
-                    up the amount of energy indicated by the number on that line.</p>
+                <p>The picture you see on the right is called a "graph". Let's say this graph is an abstract
+                    representation of your neighbourhood. Your house is located at the house icon (<span
+                            class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>).
+                    The other 5 circles show the houses of your friends in the neighbourhood: Ann, Bob, Cam, Dan, and
+                    Eve.</p>
+                <p> The lines in between the houses show possible roads you can take to go from one house to another.
+                    Lastly, the numbers along each line tells you the difficulty of each road — e.g., steeper and
+                    longer roads have a higher number because they use up more of your energy.</p>
+                <p>Your quest here is to find routes between houses so you minimize the amount of energy required to get
+                    to your friend's house.</p>
             </div>
             <div id="puzzle-image" class="col-5">
                 <img src="../assets/img/Puzzle%203%20-%20Routes.jpg" alt="Puzzle Image" class="row mx-0"/>
@@ -65,12 +68,19 @@
                 </h5>
             </div>
             <div class="puzzle-description pt-0 col-7 collapsable">
-                <p>You have a letter addressed for <span class="font-weight-bold text-primary">Ann</span>. To get from the Post Office
-                    (<span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>)
-                    to Ann's House, here are 2 potential routes <span class="font-italic">(there are tons more!)</span>.</p>
-                <p>Route 1: <span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Ann's House <span class="font-italic">(Uses 3 energy)</span></p>
-                <p>Route 2: <span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span> → Cam's House → Ann's House <span class="font-italic">(Uses 2 energy)</span></p>
-                <p>So route 2 wins!</p>
+                <p>You are at home
+                    <span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>
+                    and you want to visit your friend <span class="font-weight-bold text-primary">Ann</span>. There are
+                    many ways to get to her house. Here are 2 potential routes to consider.
+                </p>
+                <p>Route 1: <span class="iconify text-primary h5" data-icon="bi:house-door-fill"
+                                  data-inline="false"></span> → Ann's House <span
+                        class="font-italic">(Uses 3 energy)</span></p>
+                <p>Route 2: <span class="iconify text-primary h5" data-icon="bi:house-door-fill"
+                                  data-inline="false"></span> → Cam's House → Ann's House <span class="font-italic">(Uses 2 energy)</span>
+                </p>
+                <p>Even though route 2 requires you to take two roads, the total amount of energy spent is less than
+                    what you would need to go through route 1. So route 2 wins!</p>
             </div>
             <div class="puzzle-image col-5 collapsable">
                 <img src="../assets/img/Puzzle%203%20-%20Example.jpg" alt="Puzzle Image" class="row mx-0"/>
@@ -82,9 +92,9 @@
     <div id="puzzle-question-container" class="content-section">
         <div id="puzzle-question" class="h-auto">
             <h3 class="mb-0 thick-underline">Quest</h3>
-            <h6 class="mx-auto">What is the minimum energy required to deliver a letter from the Post Office
-                (<span class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span>) to
-                <span class="font-weight-bold text-primary">Dan's House</span>?</h6>
+            <h6 class="mx-auto">What is the minimum amount of energy you need to spend to go from your house <span
+                    class="iconify text-primary h5" data-icon="bi:house-door-fill" data-inline="false"></span> to <span
+                    class="font-weight-bold text-primary">Dan</span>'s house?</h6>
         </div>
         <hr/>
         <div id="puzzle-feedback"></div>
@@ -96,11 +106,7 @@
         </form>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a id="success-map-link" class="btn btn-secondary map-link d-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-map-fill my-auto mr-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                      d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.502.502 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5V.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.498.498 0 0 0-.196 0L5 14.09zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1-.5-.1z"/>
-            </svg>
+            <span class="iconify my-auto mr-2" data-icon="fa-solid:map" data-inline="false"></span>
             Back to Map
         </a>
     </div>
@@ -111,7 +117,8 @@
         Gifs via <a id="giphy-source" href="https://giphy.com/">GIPHY</a>
     </p>
     <p>
-        Developed by <a href="https://github.com/Opeyem1a">Opey Adeyemi</a> and <a href="https://people.ok.ubc.ca/bowenhui/">Dr. Bowen Hui</a>
+        Developed by <a href="https://github.com/Opeyem1a">Opey Adeyemi</a> and <a
+            href="https://people.ok.ubc.ca/bowenhui/">Dr. Bowen Hui</a>
     </p>
 </footer>
 
